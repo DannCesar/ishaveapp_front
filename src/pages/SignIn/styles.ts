@@ -13,9 +13,14 @@ background-color: ${({theme}) => theme.colors.black};
 
 & .contentContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 200px;
 
+
+    & button{
+        padding:4px;
+    }
 }
 
 & .txtContainer{

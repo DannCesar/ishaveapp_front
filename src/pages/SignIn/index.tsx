@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
+import { Button } from "../../components/Button";
 
 export const SignIn: React.FC = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ export const SignIn: React.FC = () => {
               <span>Insira seu email e senha para efetuar login</span>
             </div>
           </div>
+            <Button model="main" >
+              Acessar
+            </Button>
         </S.ContentFormContainer>
         <S.LogoContainer>
           <div>
