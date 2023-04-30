@@ -2,7 +2,7 @@ import { SignIn } from "../pages/SignIn";
 
 export const publicRoutes = [
     {
-        path:"/login",
+        path:"/",
         element: <SignIn/>
     },
 ];
