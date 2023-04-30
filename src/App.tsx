@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import { Routes } from './routes/index.routes'
+import { Routes } from "./routes/index.routes";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
 
 function App() {
-
   return (
-      <Routes/>
-  )
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
