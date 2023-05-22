@@ -4,6 +4,7 @@ import { HomeIcon } from '../../assets/Icons/HomeIcon/HomeIcon';
 import { UserIcon } from '../../assets/Icons/UserIcon/UserIcon';
 import { SccisorsIcon } from '../../assets/Icons/SccissorsIcon/SccisorsIcon';
 import { ScheduleIcon } from '../../assets/Icons/ScheduleIcon/ScheduleIcon';
+import { SignOutIcon } from '../../assets/Icons/SignOutIcon/SignOutIcon';
 
 export const Layout: React.FC = () => {
     return(
@@ -15,6 +16,9 @@ export const Layout: React.FC = () => {
                 <SccisorsIcon/>
                 <ScheduleIcon/>
             </S.NavigationLayout>
+            <S.Sidebar>
+                <SignOutIcon/>
+            </S.Sidebar>
             <S.ContentContainer>
 
             </S.ContentContainer>

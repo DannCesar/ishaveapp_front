@@ -18,6 +18,18 @@ margin-top: 20px;
 align-items: center;
 `
 
+export const Sidebar = styled.div`
+position: fixed;
+height: 100vh;
+width: 223px;
+right: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: aliceblue;
+
+`
+
 export const ContentContainer = styled.div`
 width: 86%;
 height: 90%;
