@@ -11,7 +11,9 @@ background-color: ${({theme}) => theme.colors.brown};
 ;
 
 export const NavigationLayout = styled.header`
-display: inline-block;
+display: flex;
+max-width: 1200px;
+justify-content: space-between;
 margin-top: 20px;
 align-items: center;
 `
