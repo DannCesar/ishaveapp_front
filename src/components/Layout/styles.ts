@@ -13,6 +13,7 @@ export const NavigationLayout = styled.header`
   max-width: 900px;
   justify-content: space-between;
   margin-top: 20px;
+  margin-left: 20px;
   align-items: center;
 `;
 
@@ -46,7 +47,7 @@ export const Sidebar = styled.div`
 `;
 export const AvatarContainer = styled.div`
   display: flex;
-  margin-top: 86px;
+  margin-top: 78px;
   margin-left: 40px;
   margin-bottom: 20px;
   width: 100px;
@@ -60,13 +61,13 @@ export const ContentContainer = styled.div`
   height: 90%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 40px;
+  margin-top: 30px;
   border-radius: 30px;
   background-color: ${({ theme }) => theme.colors.black};
 
   & .baseLeftContainer {
     background-color: ${({ theme }) => theme.colors.black};
-    margin-top: 495px;
+    margin-top: 505px;
     width: 30px;
     height: 30px;
     display: flex;
