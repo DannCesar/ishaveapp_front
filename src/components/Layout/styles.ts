@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const NavigationLayout = styled.header`
   display: flex;
   max-width: 900px;
-  justify-content: space-between;
+  gap: 220px;
   margin-top: 20px;
   margin-left: 20px;
   align-items: center;
