@@ -26,7 +26,6 @@ export const Layout: React.FC = () => {
         </div>
       </S.Sidebar>
       <S.ContentContainer>
-            <div className="baseLeftContainer"/>
             
       </S.ContentContainer>
     </S.Container>

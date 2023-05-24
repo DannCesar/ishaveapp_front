@@ -11,13 +11,18 @@ export const Container = styled.div`
 export const NavigationLayout = styled.header`
   display: flex;
   max-width: 900px;
-  gap: 220px;
+  gap: 50px;
   margin-top: 20px;
   margin-left: 20px;
   align-items: center;
 
   @media (max-width:1690px){
     max-width: 1140px;
+    gap: 220px;
+  }
+  @media (max-width:1333px){
+    max-width: 1300px;
+    gap: 180px;
   }
 `;
 
@@ -50,6 +55,12 @@ export const Sidebar = styled.div`
         margin-left: 0px;
     }
   }
+  @media (max-width:1333px){
+    & .nameUserContainer{
+        margin-left: 50px;
+    }
+  }
+ 
 
   & .signOutContainer {
     margin-top: 350px;
@@ -58,6 +69,11 @@ export const Sidebar = styled.div`
   @media(max-width: 1690px){
     & .signOutContainer{
         margin-top: 500px;
+    }
+  }
+  @media(max-width: 1333px){
+    & .signOutContainer{
+        margin-top: 350px;
     }
   }
 `;
@@ -74,6 +90,9 @@ export const AvatarContainer = styled.div`
   @media(max-width:1690px){
     margin-left: 0px;
   }
+  @media(max-width:1333px){
+    margin-left: 50px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -82,26 +101,8 @@ export const ContentContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 30px;
-  border-radius: 30px;
+  border-radius: 30px 30px 30px 0px;
   background-color: ${({ theme }) => theme.colors.black};
 
-  & .baseLeftContainer {
-    background-color: ${({ theme }) => theme.colors.black};
-    margin-top: 505px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-@media (max-width: 1690px) {
-    & .baseLeftContainer{
-        margin-top: 649px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: flex-end;
-    }
-  
-}
+ 
 `;
