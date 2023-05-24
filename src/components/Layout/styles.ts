@@ -15,6 +15,10 @@ export const NavigationLayout = styled.header`
   margin-top: 20px;
   margin-left: 20px;
   align-items: center;
+
+  @media (max-width:1690px){
+    max-width: 1140px;
+  }
 `;
 
 export const Sidebar = styled.div`
@@ -41,8 +45,20 @@ export const Sidebar = styled.div`
     }
   }
 
+  @media (max-width:1690px){
+    & .nameUserContainer{
+        margin-left: 0px;
+    }
+  }
+
   & .signOutContainer {
     margin-top: 350px;
+  }
+
+  @media(max-width: 1690px){
+    & .signOutContainer{
+        margin-top: 500px;
+    }
   }
 `;
 export const AvatarContainer = styled.div`
@@ -54,6 +70,10 @@ export const AvatarContainer = styled.div`
   height: 100px;
   background-color: ${({ theme }) => theme.colors.black};
   border-radius: 30%;
+
+  @media(max-width:1690px){
+    margin-left: 0px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -72,5 +92,16 @@ export const ContentContainer = styled.div`
     height: 30px;
     display: flex;
     justify-content: flex-end;
-  }
+}
+
+@media (max-width: 1690px) {
+    & .baseLeftContainer{
+        margin-top: 649px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+    }
+  
+}
 `;
