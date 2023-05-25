@@ -18,12 +18,22 @@ export const NavigationLayout = styled.header`
 
   @media (max-width:1690px){
     max-width: 1140px;
-    gap: 220px;
+    gap: 160px;
   }
   @media (max-width:1333px){
     max-width: 1300px;
     gap: 180px;
   }
+
+  & .navigation{
+    display: flex;
+    gap:10px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    position: relative;
+    align-items: center;
+  }
+
 `;
 
 export const Sidebar = styled.div`
@@ -97,10 +107,10 @@ export const AvatarContainer = styled.div`
 
 export const ContentContainer = styled.div`
   width: 86%;
-  height: 90%;
+  height: 93%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 30px;
+  margin-top: 12px;
   border-radius: 30px 30px 30px 0px;
   background-color: ${({ theme }) => theme.colors.black};
 

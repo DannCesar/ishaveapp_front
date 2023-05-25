@@ -6,18 +6,34 @@ import { SccisorsIcon } from "../../assets/Icons/SccissorsIcon/SccisorsIcon";
 import { ScheduleIcon } from "../../assets/Icons/ScheduleIcon/ScheduleIcon";
 import { SignOutIcon } from "../../assets/Icons/SignOutIcon/SignOutIcon";
 
-export const Layout: React.FC = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export const Layout: React.FC<LayoutProps> = () => {
   return (
     <S.Container>
       <S.NavigationLayout>
         <h2>IShaveApp</h2>
-        <HomeIcon />
-        <UserIcon />
-        <SccisorsIcon />
-        <ScheduleIcon />
+        <div className="navigation">
+          <HomeIcon />
+          Inicio
+        </div>
+        <div className="navigation">
+          <UserIcon />
+          Clientes
+        </div>
+        <div className="navigation">
+          <SccisorsIcon />
+          Serviços
+        </div>
+        <div className="navigation" >
+          <ScheduleIcon />
+          Agendamento
+        </div>
       </S.NavigationLayout>
       <S.Sidebar>
-        <S.AvatarContainer/>
+        <S.AvatarContainer />
         <div className="nameUserContainer">
           <h3>Nome do usuário</h3>
         </div>
@@ -25,9 +41,7 @@ export const Layout: React.FC = () => {
           <SignOutIcon />
         </div>
       </S.Sidebar>
-      <S.ContentContainer>
-            
-      </S.ContentContainer>
+      <S.ContentContainer></S.ContentContainer>
     </S.Container>
   );
 };

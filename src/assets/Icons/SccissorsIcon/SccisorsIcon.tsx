@@ -4,8 +4,8 @@ export const SccisorsIcon: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       fill="#000000"
       viewBox="0 0 256 256"
     >
