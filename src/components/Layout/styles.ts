@@ -22,7 +22,7 @@ export const NavigationLayout = styled.header`
   }
   @media (max-width:1333px){
     max-width: 1300px;
-    gap: 180px;
+    gap: 100px;
   }
 
   & .navigation{
@@ -33,6 +33,7 @@ export const NavigationLayout = styled.header`
     position: relative;
     align-items: center;
   }
+
 
 `;
 
@@ -55,8 +56,9 @@ export const Sidebar = styled.div`
     align-items: center;
 
     > h3 {
-      font-family: Roboto, sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 16px;
+      
     }
   }
 
@@ -84,6 +86,7 @@ export const Sidebar = styled.div`
   @media(max-width: 1333px){
     & .signOutContainer{
         margin-top: 350px;
+        margin-left: 42px;
     }
   }
 `;
@@ -96,6 +99,7 @@ export const AvatarContainer = styled.div`
   height: 100px;
   background-color: ${({ theme }) => theme.colors.black};
   border-radius: 30%;
+  
 
   @media(max-width:1690px){
     margin-left: 0px;
