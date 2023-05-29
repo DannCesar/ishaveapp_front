@@ -1,39 +1,64 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-width: 100vw;
-height: 100vh;
-display: flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  
 `;
 
-export const ContentFormContainer= styled.div`
-width: 50%;
-height: 100vh;
-background-color: ${({theme}) => theme.colors.black};
+export const ContentFormContainer = styled.div`
+  width: 50%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.black};
+  
 
-& .contentContainer{
+  & .contentContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 200px;
+    align-items: center;
 
-
-    & button{
-        padding:4px;
+    & button {
+      padding: 4px;
+      align-items: center;
+      margin-top: 12px;
     }
-}
+  }
 
-& .txtContainer{
+  & .txtContainer {
     display: flex;
     flex-direction: column;
     color: #fff;
     text-align: center;
     gap: 8px;
-}
+    
+  }
+
+  & .inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    & input {
+      width: 300px;
+      height: 36px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: ${({ theme }) => theme.colors.ice};
+    }
+    & h4 {
+      color: #fff;
+      
+    }
+  }
 `;
 
 export const LogoContainer = styled.div`
-width: 50%;
-height: 100vh;
-background-color: ${({theme}) => theme.colors.brown};
+  width: 50%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.brown};
 `;

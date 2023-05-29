@@ -15,10 +15,16 @@ export const SignIn: React.FC = () => {
               <h3>Bem vindo!</h3>
               <span>Insira seu email e senha para efetuar login</span>
             </div>
+            <div className="inputContainer">
+              <h4>Email</h4>
+              <input type="email"></input>
+            </div>
+            <div className="inputContainer">
+              <h4>Senha</h4>
+              <input type="password"></input>
+            </div>
+            <Button model="main">Acessar</Button>
           </div>
-            <Button model="main" >
-              Acessar
-            </Button>
         </S.ContentFormContainer>
         <S.LogoContainer>
           <div>
