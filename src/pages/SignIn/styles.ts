@@ -27,6 +27,12 @@ export const ContentFormContainer = styled.div`
     }
   }
 
+  @media (max-width:1333px){
+    & .contentContainer{
+      margin-top: 120px
+    }
+  }
+
   & .txtContainer {
     display: flex;
     flex-direction: column;
@@ -53,6 +59,19 @@ export const ContentFormContainer = styled.div`
     & h4 {
       color: #fff;
       
+    }
+
+    & .spanContainer{
+      margin-top: -8px;
+      font-size: 12px;
+      display: flex;
+      justify-content: end;
+      color: #fff;
+    }
+    & a {
+      color: #5896B8;
+      margin: none;
+      text-decoration: none;
     }
   }
 `;

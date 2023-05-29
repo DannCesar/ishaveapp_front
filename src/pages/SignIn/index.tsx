@@ -22,6 +22,10 @@ export const SignIn: React.FC = () => {
             <div className="inputContainer">
               <h4>Senha</h4>
               <input type="password"></input>
+              <div className="spanContainer">
+
+              <span>Ainda não é cadastrado? Clique <a href="">aqui</a></span>
+              </div>
             </div>
             <Button model="main">Acessar</Button>
           </div>
