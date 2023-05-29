@@ -8,7 +8,7 @@ interface ButtonContainerProps{
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
 background-color: ${({theme,model}) => model === "main" ? theme.colors.ice: theme.colors.brown };
-color: ${({theme,model}) => model === "main"? theme.colors.black : "#fff"};
+color: ${({theme,model}) =>  theme.colors.black};
 border-radius: ${({theme}) => theme.borderRadius.button};
 height: ${(props) => props.height || "30px" };
 min-width: 100px;
