@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 @media(max-width:1333px){
     & .contentContainer{
-        margin-top: 100px;
+        margin-top: 40px;
     }
 }
 
@@ -76,7 +76,7 @@ export const ContentFormContainer = styled.div`
 
     @media(max-width:1333px){
         & .btnContainer{
-            margin-top: 120px;
+            margin-top: 80px;
         }
     }
   `;

@@ -15,19 +15,27 @@ export const SignUp: React.FC = () => {
           <S.FormContainer>
             <div className="inputContainer">
               <h4>Nome da Empresa</h4>
-              <input type="email"></input>
+              <input type="text"></input>
             </div>
             <div className="inputContainer">
               <h4>CNPJ</h4>
-              <input type="email"></input>
+              <input type="number"></input>
             </div>
             <div className="inputContainer">
               <h4>Telefone</h4>
-              <input type="email"></input>
+              <input type="text"></input>
             </div>
             <div className="inputContainer">
               <h4>Email</h4>
               <input type="email"></input>
+            </div>
+            <div className="inputContainer">
+              <h4>Senha</h4>
+              <input type="password"></input>
+            </div>
+            <div className="inputContainer">
+              <h4>Confirmar Senha</h4>
+              <input type="password"></input>
             </div>
           </S.FormContainer>
           <div className="btnContainer">
