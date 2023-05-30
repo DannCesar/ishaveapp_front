@@ -17,7 +17,7 @@ export const ContentFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 180px;
     align-items: center;
 
     & button {
@@ -39,6 +39,11 @@ export const ContentFormContainer = styled.div`
     color: #fff;
     text-align: center;
     gap: 8px;
+
+    & h3{
+      font-weight: 200;
+      font-size: 20px;
+    }
     
   }
 
@@ -62,16 +67,19 @@ export const ContentFormContainer = styled.div`
     }
 
     & .spanContainer{
-      margin-top: -8px;
+      margin-top: -20px;
       font-size: 12px;
       display: flex;
       justify-content: end;
       color: #fff;
     }
-    & a {
+    & button {
       color: #5896B8;
-      margin: none;
-      text-decoration: none;
+      margin-left: -4px;
+      text-decoration: underline;
+      border: none;
+      background-color: ${({theme}) => theme.colors.black};
+      cursor: pointer;
     }
   }
 `;
@@ -80,4 +88,6 @@ export const LogoContainer = styled.div`
   width: 50%;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.brown};
+
+  
 `;

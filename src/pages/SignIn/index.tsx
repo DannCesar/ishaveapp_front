@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
+import Logo from "../../assets/logo.jpeg"
 
 export const SignIn: React.FC = () => {
   const navigate = useNavigate();
@@ -24,16 +25,16 @@ export const SignIn: React.FC = () => {
               <input type="password"></input>
               <div className="spanContainer">
 
-              <span>Ainda não é cadastrado? Clique <a href="">aqui</a></span>
+              <span>Ainda não é cadastrado? Clique <button onClick={() => navigate('/cadastro')}>aqui</button></span>
               </div>
             </div>
             <Button model="main">Acessar</Button>
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
-          <div>
-            <h1></h1>
-          </div>
+          {/* <div className="logo">
+           <img src={Logo} alt="" />
+          </div> */}
         </S.LogoContainer>
       </S.Container>
     </>

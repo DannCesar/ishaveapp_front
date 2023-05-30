@@ -9,7 +9,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 130px;
     align-items: center;
   }
 @media(max-width:1333px){
@@ -38,7 +38,8 @@ export const ContentFormContainer = styled.div`
   & .inputContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
     
 
     & input {
@@ -70,6 +71,7 @@ export const ContentFormContainer = styled.div`
         display: flex;
         height: 40px;
         gap: 30px;
+        margin-top: 100px;
         justify-content: center;
         /* background-color: aliceblue; */
     }

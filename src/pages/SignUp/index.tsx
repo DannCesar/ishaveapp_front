@@ -1,8 +1,10 @@
 import React from "react";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 export const SignUp: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <>
       <S.Container>
@@ -39,7 +41,7 @@ export const SignUp: React.FC = () => {
             </div>
           </S.FormContainer>
           <div className="btnContainer">
-            <Button>Voltar</Button>
+            <Button onClick={() => navigate('/')}>Voltar</Button>
             <Button model="alternative">Próximo</Button>
           </div>
         </S.ContentFormContainer>
