@@ -43,41 +43,23 @@ export const ContentFormContainer = styled.form`
       font-size: 20px;
     }
   }
-
-  & .inputContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-
-    & input {
-      width: 300px;
-      height: 36px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      border: none;
-      background-color: ${({ theme }) => theme.colors.ice};
-    }
-    & h4 {
-      color: #fff;
-    }
-
-    & .spanContainer {
+  & .spanContainer {
       margin-top: -20px;
       font-size: 12px;
       display: flex;
       justify-content: end;
       color: #fff;
+      & button {
+        color: #5896b8;
+        margin-left: -4px;
+        text-decoration: underline;
+        border: none;
+        background-color: ${({ theme }) => theme.colors.black};
+        cursor: pointer;
+      }
     }
-    & button {
-      color: #5896b8;
-      margin-left: -4px;
-      text-decoration: underline;
-      border: none;
-      background-color: ${({ theme }) => theme.colors.black};
-      cursor: pointer;
-    }
-  }
+
+   
 `;
 
 export const LogoContainer = styled.div`

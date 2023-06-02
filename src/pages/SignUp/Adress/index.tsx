@@ -2,12 +2,14 @@ import React from 'react'
 import * as S from './styles'
 import { Button } from '../../../components/Button'
 import { useNavigate } from 'react-router-dom'
-import { UseSignUp } from '../hooks/useSignUp'
 import Logo from "../../../assets/logoIShaveApp.png"
+import { useSignUp } from '../hooks/useSignUp'
+import { TextInput } from '../../../components/TextInput'
+
 
 export const Adress: React.FC = () => {
     const navigate = useNavigate()
-    const {formSignUp} =UseSignUp()
+    const {formSignUp} =useSignUp()
     return(
         <>
          <S.Container>
@@ -18,30 +20,36 @@ export const Adress: React.FC = () => {
             </div>
           </div>
           <S.FormContainer onSubmit={formSignUp.handleSubmit}>
-            <div className="inputContainer">
-              <h4>CEP</h4>
-              <input type="text" name='cep'></input>
-            </div>
-            <div className="inputContainer">
-              <h4>Logradouro</h4>
-              <input type="number" name='logradouro'></input>
-            </div>
-            <div className="inputContainer">
-              <h4>Bairro</h4>
-              <input type="text" name='bairro'></input>
-            </div>
-            <div className="inputContainer">
-              <h4>Cidade</h4>
-              <input type="email" name='cidade'></input>
-            </div>
-            <div className="inputContainer">
-              <h4>Número</h4>
-              <input type="text" name='numeroEmpresa'></input>
-            </div>
-            <div className="inputContainer">
-              <h4>UF</h4>
-              <input type="text" name='uf'></input>
-            </div>
+          <TextInput
+              label="Cep"
+              name="cep"
+              form={formSignUp}
+            />
+            <TextInput
+              label="Logradoura"
+              name="logradouro"
+              form={formSignUp}
+            />
+            <TextInput
+              label="Bairro"
+              name="bairro"
+              form={formSignUp}
+            />
+            <TextInput
+              label="Cidade"
+              name="cidade"
+              form={formSignUp}
+            />
+            <TextInput
+              label="Numero"
+              name="numeroEmpresa"
+              form={formSignUp}
+            />
+            <TextInput
+              label="UF"
+              name="uf"
+              form={formSignUp}
+            />
           </S.FormContainer>
           <div className="btnContainer">
             <Button onClick={() => navigate('/cadastro')}>Voltar</Button>
