@@ -4,14 +4,12 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  
 `;
 
-export const ContentFormContainer = styled.div`
+export const ContentFormContainer = styled.form`
   width: 50%;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
-  
 
   & .contentContainer {
     display: flex;
@@ -27,9 +25,9 @@ export const ContentFormContainer = styled.div`
     }
   }
 
-  @media (max-width:1333px){
-    & .contentContainer{
-      margin-top: 120px
+  @media (max-width: 1333px) {
+    & .contentContainer {
+      margin-top: 120px;
     }
   }
 
@@ -40,11 +38,10 @@ export const ContentFormContainer = styled.div`
     text-align: center;
     gap: 8px;
 
-    & h3{
+    & h3 {
       font-weight: 200;
       font-size: 20px;
     }
-    
   }
 
   & .inputContainer {
@@ -63,10 +60,9 @@ export const ContentFormContainer = styled.div`
     }
     & h4 {
       color: #fff;
-      
     }
 
-    & .spanContainer{
+    & .spanContainer {
       margin-top: -20px;
       font-size: 12px;
       display: flex;
@@ -74,11 +70,11 @@ export const ContentFormContainer = styled.div`
       color: #fff;
     }
     & button {
-      color: #5896B8;
+      color: #5896b8;
       margin-left: -4px;
       text-decoration: underline;
       border: none;
-      background-color: ${({theme}) => theme.colors.black};
+      background-color: ${({ theme }) => theme.colors.black};
       cursor: pointer;
     }
   }
@@ -89,5 +85,20 @@ export const LogoContainer = styled.div`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.brown};
 
-  
+  & .logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-left: 15%;
+    width: 600px;
+    height: 500px;
+  }
+
+  & img {
+    width: 500px;
+    height: 300px;
+    box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black};
+    border-radius: 50%;
+  }
 `;

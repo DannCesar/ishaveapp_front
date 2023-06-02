@@ -2,7 +2,8 @@ import React, {  InputHTMLAttributes } from "react";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-import { UseSignUp } from "./hooks/useSignUp";
+import {  useSignUp } from "./hooks/useSignUp";
+import Logo from "../../assets/logoIShaveApp.png"
 
 interface SignUpProps extends InputHTMLAttributes<HTMLInputElement>{
 }
@@ -11,7 +12,7 @@ interface SignUpProps extends InputHTMLAttributes<HTMLInputElement>{
 
 export const SignUp: React.FC <SignUpProps>= (props) => {
   const navigate = useNavigate()
-  const {formSignUp} = UseSignUp()
+  const {formSignUp} = useSignUp()
 
   return (
     <>
@@ -54,8 +55,8 @@ export const SignUp: React.FC <SignUpProps>= (props) => {
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
-          <div>
-            <h1></h1>
+        <div className="logo">
+           <img src={Logo} alt="" />
           </div>
         </S.LogoContainer>
       </S.Container>

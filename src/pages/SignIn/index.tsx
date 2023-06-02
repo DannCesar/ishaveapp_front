@@ -2,14 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
-import Logo from "../../assets/logo.jpeg"
+import Logo from "../../assets/logoIShaveApp.png"
+import { useSignIn } from "./hooks/useSignIn";
 
 export const SignIn: React.FC = () => {
   const navigate = useNavigate();
+  const {formSignIn} =useSignIn()
   return (
     <>
       <S.Container>
-        <S.ContentFormContainer>
+        <S.ContentFormContainer onSubmit={formSignIn.handleSubmit}>
           <div className="contentContainer">
             <div className="txtContainer">
               <h1>IShaveApp</h1>
@@ -32,9 +34,9 @@ export const SignIn: React.FC = () => {
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
-          {/* <div className="logo">
+          <div className="logo">
            <img src={Logo} alt="" />
-          </div> */}
+          </div>
         </S.LogoContainer>
       </S.Container>
     </>

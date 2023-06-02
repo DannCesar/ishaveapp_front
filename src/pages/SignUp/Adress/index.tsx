@@ -3,6 +3,7 @@ import * as S from './styles'
 import { Button } from '../../../components/Button'
 import { useNavigate } from 'react-router-dom'
 import { UseSignUp } from '../hooks/useSignUp'
+import Logo from "../../../assets/logoIShaveApp.png"
 
 export const Adress: React.FC = () => {
     const navigate = useNavigate()
@@ -48,8 +49,8 @@ export const Adress: React.FC = () => {
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
-          <div>
-            <h1></h1>
+        <div className="logo">
+           <img src={Logo} alt="" />
           </div>
         </S.LogoContainer>
       </S.Container>

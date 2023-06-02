@@ -14,6 +14,11 @@ interface CreateUserProps{
     uf: string;
 }
 
+interface LoginUserProps{
+    emailUsuario: string;
+    senhaUsuario: string;
+}
+
 export class UserService{
     async crateUser({
         cnpjEmpresa,
@@ -28,7 +33,7 @@ export class UserService{
         cidade,
         uf
     }:CreateUserProps){
-        const {data} = await api.post('/sign-up',{
+        const {data} = await api.post(`/sign-up`,{
             empresa:{
                 cnpjEmpresa,
                 nomeEmpresa,
@@ -49,4 +54,10 @@ export class UserService{
         });
         return data
     };
+
+    async loginUser(emailUsuario:string, senhaUsuario:string){
+        const {data} = await api.get(`/sign-in/${emailUsuario}/${senhaUsuario}`)
+        return data
+    }
+
 };

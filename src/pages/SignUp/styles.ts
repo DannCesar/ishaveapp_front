@@ -12,12 +12,11 @@ export const Container = styled.div`
     margin-top: 130px;
     align-items: center;
   }
-@media(max-width:1333px){
-    & .contentContainer{
-        margin-top: 40px;
+  @media (max-width: 1333px) {
+    & .contentContainer {
+      margin-top: 40px;
     }
-}
-
+  }
 
   & .txtContainer {
     display: flex;
@@ -25,7 +24,6 @@ export const Container = styled.div`
     color: #fff;
     text-align: center;
     gap: 8px;
-    
   }
 `;
 
@@ -34,13 +32,11 @@ export const ContentFormContainer = styled.div`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
 
-
   & .inputContainer {
     display: flex;
     flex-direction: column;
     margin-top: 40px;
     margin-left: 50px;
-    
 
     & input {
       width: 300px;
@@ -53,48 +49,63 @@ export const ContentFormContainer = styled.div`
     }
     & h4 {
       color: #fff;
-      
-    }}
-
-    @media(max-width:1333px){
-        & .inputContainer{
-            margin-left: 50px;
-            margin-top: 50px;
-            & input{
-                width: 230px;
-            }
-        }
-
     }
+  }
 
-    & .btnContainer{
-        display: flex;
-        height: 40px;
-        gap: 30px;
-        margin-top: 100px;
-        justify-content: center;
-        /* background-color: aliceblue; */
+  @media (max-width: 1333px) {
+    & .inputContainer {
+      margin-left: 50px;
+      margin-top: 50px;
+      & input {
+        width: 230px;
+      }
     }
+  }
 
-    @media(max-width:1333px){
-        & .btnContainer{
-            margin-top: 80px;
-        }
+  & .btnContainer {
+    display: flex;
+    height: 40px;
+    gap: 30px;
+    margin-top: 100px;
+    justify-content: center;
+    /* background-color: aliceblue; */
+  }
+
+  @media (max-width: 1333px) {
+    & .btnContainer {
+      margin-top: 80px;
     }
-  `;
+  }
+`;
 
 export const LogoContainer = styled.div`
-width: 50%;
-height: 100vh;
-background-color: ${({ theme }) => theme.colors.brown};
+  width: 50%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.brown};
+
+  & .logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-left: 15%;
+    width: 600px;
+    height: 500px;
+  }
+
+  & img {
+    width: 500px;
+    height: 300px;
+    box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black};
+    border-radius: 50%;
+  }
 `;
 
 export const FormContainer = styled.form`
-display: grid;
-grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-@media(max-width:1333px){
+  @media (max-width: 1333px) {
     width: 600px;
-}
-
-`
+  }
+`;

@@ -3,7 +3,7 @@ import { UserService } from '../../../services/UserService';
 
 const userApi = new UserService()
 
-export const UseSignUp = () =>{
+export const useSignUp = () =>{
 const formSignUp = useFormik({
     initialValues:{
         nomeEmpresa:'',
