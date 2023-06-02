@@ -90,7 +90,7 @@ height: 100vh;
 background-color: ${({ theme }) => theme.colors.brown};
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
 display: grid;
 grid-template-columns: 1fr 1fr;
 

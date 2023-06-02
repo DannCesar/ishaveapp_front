@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes, InputHTMLAttributes } from "react";
+import React, {  InputHTMLAttributes } from "react";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -22,30 +22,30 @@ export const SignUp: React.FC <SignUpProps>= (props) => {
               <h1>Cadastro</h1>
             </div>
           </div>
-          <S.FormContainer {...props}>
+          <S.FormContainer  onSubmit={formSignUp.handleSubmit}>
             <div className="inputContainer">
               <h4>Nome da Empresa</h4>
-              <input type="text" name="nomeEmpresa" form={formSignUp}></input>
+              <input type="text" name="nomeEmpresa" ></input>
             </div>
             <div className="inputContainer">
               <h4>CNPJ</h4>
-              <input type="number" name="cnpjEmpresa" form={formSignUp}></input>
+              <input type="number" name="cnpjEmpresa"></input>
             </div>
-            <div className="inputContainer">
+            <div className="inputContainer" >
               <h4>Telefone</h4>
-              <input type="text"></input>
+              <input type="text" name="telEmpresa"></input>
             </div>
             <div className="inputContainer">
               <h4>Email</h4>
-              <input type="email" name="email"></input>
+              <input type="email" name="emailUsuario" ></input>
             </div>
             <div className="inputContainer">
               <h4>Senha</h4>
-              <input type="password"></input>
+              <input type="password" name="senhaUsuario"></input>
             </div>
             <div className="inputContainer">
               <h4>Confirmar Senha</h4>
-              <input type="password"></input>
+              <input type="password" name="senhaUsuario"></input>
             </div>
           </S.FormContainer>
           <div className="btnContainer">

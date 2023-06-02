@@ -9,7 +9,6 @@ const formSignUp = useFormik({
         nomeEmpresa:'',
         cnpjEmpresa: '',
         telEmpresa: '',
-        nomeUsuario: '',
         emailUsuario: '',
         senhaUsuario: '',
         cep: '',
@@ -25,7 +24,6 @@ const formSignUp = useFormik({
                nomeEmpresa: values.nomeEmpresa,
                cnpjEmpresa: values.cnpjEmpresa,
                telEmpresa: values.telEmpresa,
-               nomeUsuario: values.nomeUsuario,
                emailUsuario: values.emailUsuario,
                senhaUsuario: values.senhaUsuario,
                cep: values.cep,
@@ -34,7 +32,8 @@ const formSignUp = useFormik({
                bairro: values.bairro,
                cidade: values.cidade,
                uf: values.uf
-            })
+            });
+            alert('Realizado cadastro com sucesso!')
         }catch(error){
             alert ('Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!')
         }

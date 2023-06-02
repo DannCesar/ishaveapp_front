@@ -4,7 +4,6 @@ interface CreateUserProps{
     cnpjEmpresa: string;
     nomeEmpresa: string;
     telEmpresa: string;
-    nomeUsuario: string;
     emailUsuario: string;
     senhaUsuario: string;
     cep: string;
@@ -20,7 +19,6 @@ export class UserService{
         cnpjEmpresa,
         nomeEmpresa,
         telEmpresa,
-        nomeUsuario,
         emailUsuario,
         senhaUsuario,
         cep,
@@ -45,7 +43,6 @@ export class UserService{
                 uf
             },
             usuario:{
-                nomeUsuario,
                 emailUsuario,
                 senhaUsuario
             }
