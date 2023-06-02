@@ -44,7 +44,7 @@ export const Adress: React.FC = () => {
           </S.FormContainer>
           <div className="btnContainer">
             <Button onClick={() => navigate('/cadastro')}>Voltar</Button>
-            <Button model="alternative" onClick={() => formSignUp.handleSubmit}>Cadastrar</Button>
+            <Button model="alternative" type='submit' onClick={() => formSignUp.handleSubmit}>Cadastrar</Button>
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
