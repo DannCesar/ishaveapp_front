@@ -35,11 +35,11 @@ export const Adress: React.FC = () => {
             </div>
             <div className="inputContainer">
               <h4>Número</h4>
-              <input type="password" name='numeroEmpresa'></input>
+              <input type="text" name='numeroEmpresa'></input>
             </div>
             <div className="inputContainer">
               <h4>UF</h4>
-              <input type="password" name='uf'></input>
+              <input type="text" name='uf'></input>
             </div>
           </S.FormContainer>
           <div className="btnContainer">
