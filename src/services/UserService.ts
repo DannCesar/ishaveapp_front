@@ -55,8 +55,13 @@ export class UserService{
         return data
     };
 
-    async loginUser(emailUsuario:string, senhaUsuario:string){
-        const {data} = await api.get(`/sign-in/${emailUsuario}/${senhaUsuario}`)
+    async loginUser({
+        emailUsuario, 
+        senhaUsuario}:LoginUserProps){
+        const {data} = await api.post(`/sign-in/`,{
+            emailUsuario,
+            senhaUsuario
+        })
         return data
     }
 

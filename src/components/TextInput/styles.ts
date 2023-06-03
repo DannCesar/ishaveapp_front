@@ -13,13 +13,13 @@ display: flex;
 & .inputContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 10px;
     
 
     & input {
       width: 300px;
       height: 36px;
-      margin-top: 10px;
+      margin-top: 8px;
       margin-bottom: 10px;
       border-radius: 8px;
       border: none;
