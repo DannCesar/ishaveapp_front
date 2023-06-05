@@ -37,7 +37,7 @@ export const Adress: React.FC = () => {
           </div>
           <S.FormContainer onSubmit={formSignUp.handleSubmit}>
             <TextInput label="Cep" name="cep" form={formSignUp} />
-            <TextInput label="Logradoura" name="logradouro" form={formSignUp} />
+            <TextInput label="Logradouro" name="logradouro" form={formSignUp} />
             <TextInput label="Bairro" name="bairro" form={formSignUp} />
             <TextInput label="Cidade" name="cidade" form={formSignUp} />
             <TextInput label="Numero" name="numeroEmpresa" form={formSignUp} />
