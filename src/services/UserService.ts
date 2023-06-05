@@ -1,5 +1,7 @@
 import { api } from "./api";
 
+//Tipagem das propriedade do usuário
+
 interface CreateUserProps{
     cnpjEmpresa: string;
     nomeEmpresa: string;
@@ -18,6 +20,8 @@ interface LoginUserProps{
     emailUsuario: string;
     senhaUsuario: string;
 }
+
+//Criação da classe e exportação para requisição do signUp e singIn
 
 export class UserService{
     async crateUser({

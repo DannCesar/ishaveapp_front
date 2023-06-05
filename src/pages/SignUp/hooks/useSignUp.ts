@@ -1,9 +1,11 @@
 import { useFormik } from 'formik';
 import { UserService } from '../../../services/UserService';
 
+//instanciação da classe UserService
 const userApi = new UserService()
 
 export const useSignUp = () =>{
+    //form
 const formSignUp = useFormik({
     initialValues:{
         nomeEmpresa:'',
@@ -19,6 +21,7 @@ const formSignUp = useFormik({
         uf: ''
 
     },onSubmit: async (values)=> {
+        //preenchimento dos campos do formulário
         try{
             await  userApi.crateUser({
                nomeEmpresa: values.nomeEmpresa,
