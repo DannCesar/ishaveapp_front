@@ -4,7 +4,8 @@ import { privateRoutes } from "./private.routes";
 
 
 export const Routes = () => {
+    const idSession = localStorage.getItem("ishaveappId")
     return(
-        <RouterProvider router={createBrowserRouter(publicRoutes && privateRoutes)}/>
+        <RouterProvider router={createBrowserRouter(idSession?privateRoutes:publicRoutes)}/>
     );
 };
