@@ -21,11 +21,11 @@ export const useSignIn = () => {
     onSubmit: async (values) => {
       //preenchimento dos campos do formulário
       try {
-        await userApi.loginUser({
+        const data = await userApi.loginUser({
           emailUsuario: values.emailUsuario,
           senhaUsuario: values.senhaUsuario,
         });
-        alert("Realizado cadastro com sucesso!");
+        localStorage.setItem("ishaveappId",data.idSession.toString())
       } catch (error) {
         alert(
           "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"

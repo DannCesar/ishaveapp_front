@@ -37,7 +37,7 @@ export const SignIn: React.FC = () => {
                 <button onClick={() => navigate("/cadastro")}>aqui</button>
               </span>
             </div>
-            <Button model="main" onClick={()=> formSignIn.handleSubmit}>Acessar</Button>
+            <Button model="main" type="submit">Acessar</Button>
           </div>
         </S.ContentFormContainer>
         <S.LogoContainer>
