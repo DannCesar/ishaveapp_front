@@ -27,7 +27,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ContentFormContainer = styled.div`
+export const InfoFormContainer = styled.div`
   width: 50%;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
@@ -67,7 +67,9 @@ export const ContentFormContainer = styled.div`
     height: 40px;
     gap: 30px;
     margin-top: 100px;
-    justify-content: center;
+    justify-content: end;
+    margin-right: 50px;
+    border: none;
     /* background-color: aliceblue; */
   }
 
@@ -78,26 +80,69 @@ export const ContentFormContainer = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div`
+export const AdressContainer = styled.div`
   width: 50%;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.brown};
 
-  & .logo {
+  & .inputContainer {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 80px;
-    margin-left: 15%;
-    width: 600px;
-    height: 500px;
+    margin-top: 40px;
+    margin-left: 50px;
+
+    & input {
+      width: 300px;
+      height: 36px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: ${({ theme }) => theme.colors.ice};
+    }
+    & h4 {
+      color: #fff;
+    }
+  }
+  & .adressContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 130px;
+    align-items: center;
+  }
+  @media (max-width: 1333px) {
+    & .adressContainer {
+      margin-top: 40px;
+    }
   }
 
-  & img {
-    width: 500px;
-    height: 300px;
-    box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black};
-    border-radius: 50%;
+  & .txtContainer {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    gap: 8px;
+  }
+  & .btnContainer {
+    display: flex;
+    height: 40px;
+    gap: 30px;
+    margin-top: 100px;
+    margin-left: 50px;
+    justify-content: start;
+   
+    & button{
+      border: ${({theme}) => theme.colors.brown};
+
+    }
+    /* background-color: aliceblue; */
+  }
+
+  @media (max-width: 1333px) {
+    & .btnContainer {
+      margin-top: 80px;
+    }
   }
 `;
 
