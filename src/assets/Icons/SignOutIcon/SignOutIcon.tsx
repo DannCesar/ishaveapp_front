@@ -1,6 +1,10 @@
 import React from "react";
 
-export const SignOutIcon: React.FC = () => {
+export interface IconProps {
+  onClick: () => void
+}
+
+export const SignOutIcon: React.FC<IconProps>= () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -7,6 +7,6 @@ export default {
         borderRadius: {
             input: "50px",
             button: "50px",
-            modal: "8px",
+            modal: "12px",
           },
 }

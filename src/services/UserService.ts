@@ -24,7 +24,7 @@ interface LoginUserProps {
 //Criação da classe e exportação para requisição do signUp e singIn
 
 export class UserService {
-  async crateUser({
+  async createUser({
     cnpjEmpresa,
     nomeEmpresa,
     telEmpresa,

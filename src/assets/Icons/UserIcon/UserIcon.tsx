@@ -1,6 +1,10 @@
 import React from "react";
 
-export const UserIcon: React.FC = () => {
+export interface IconProps {
+  onClick: () => void
+}
+
+export const UserIcon: React.FC<IconProps> = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

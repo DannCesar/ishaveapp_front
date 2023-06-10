@@ -16,19 +16,19 @@ export const Layout: React.FC<LayoutProps> = () => {
       <S.NavigationLayout>
         <h2>IShaveApp</h2>
         <div className="navigation">
-          <HomeIcon />
+          <HomeIcon onClick={() => {}} />
           Inicio
         </div>
         <div className="navigation">
-          <UserIcon />
+          <UserIcon onClick={() => {}}/>
           Clientes
         </div>
         <div className="navigation">
-          <SccisorsIcon />
+          <SccisorsIcon onClick={() => {}}/>
           Serviços
         </div>
         <div className="navigation" >
-          <ScheduleIcon />
+          <ScheduleIcon onClick={() => {}}/>
           Agendamento
         </div>
       </S.NavigationLayout>
@@ -38,7 +38,7 @@ export const Layout: React.FC<LayoutProps> = () => {
           <h3>Nome do usuário</h3>
         </div>
         <div className="signOutContainer">
-          <SignOutIcon />
+          <SignOutIcon onClick={() => {}}/>
         </div>
       </S.Sidebar>
       <S.ContentContainer></S.ContentContainer>

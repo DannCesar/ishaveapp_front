@@ -35,6 +35,8 @@ export const SignUp: React.FC = () => {
             </div>
           </div>
           <S.FormContainer onSubmit={formSignUp.handleSubmit}>
+            <div className="infoContainer">
+
             <TextInput
               label="Nome da Empresa"
               name="nomeEmpresa"
@@ -43,38 +45,27 @@ export const SignUp: React.FC = () => {
             <TextInput label="CNPJ" name="cnpjEmpresa" form={formSignUp} />
             <TextInput label="Telefone" name="telEmpresa" form={formSignUp} />
             <TextInput label="Email" name="emailUsuario" form={formSignUp} />
-            <TextInput label="Senha" name="senhaUsuario" form={formSignUp} />
-            <TextInput
-              label="Confirmar Senha"
-              name="senhaUsuario"
-              form={formSignUp}
-            />
-          </S.FormContainer>
-          <div className="btnContainer">
-            <Button onClick={() => navigate("/")} >Voltar</Button>
-          </div>
-        </S.InfoFormContainer>
-        <S.AdressContainer>
-          <div className="adressContainer">
-            <div className="txtContainer">
-              <h1>Endereço Empresarial</h1>
-            </div>
-          </div>
-          <S.FormContainer onSubmit={formSignUp.handleSubmit}>
             <TextInput label="CEP" name="cep" form={formSignUp} />
             <TextInput label="Logradouro" name="logradouro" form={formSignUp} />
             <TextInput label="Bairro" name="bairro" form={formSignUp} />
             <TextInput label="Cidade" name="cidade" form={formSignUp} />
             <TextInput label="Numero" name="numeroEmpresa" form={formSignUp} />
             <TextInput label="UF" name="uf" form={formSignUp} />
+            <TextInput label="Senha" name="senhaUsuario" form={formSignUp} />
+            <TextInput
+              label="Confirmar Senha"
+              name="senhaUsuario"
+              form={formSignUp}
+            />
+            </div>
+            <div className="btnContainer">
+            <Button onClick={() => navigate("/")}>Voltar</Button>
+              <Button model="main" type="submit">
+                Cadastrar
+              </Button>
+            </div>
           </S.FormContainer>
-          <div className="btnContainer">
-            <Button model="main" type="submit">
-              Cadastrar
-            </Button>
-          </div>
-        </S.AdressContainer>
-       
+        </S.InfoFormContainer>
       </S.Container>
     </>
   );

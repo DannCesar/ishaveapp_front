@@ -32,6 +32,7 @@ export const NavigationLayout = styled.header`
     font-size: 18px;
     position: relative;
     align-items: center;
+    cursor: pointer;
   }
 
 
@@ -76,6 +77,7 @@ export const Sidebar = styled.div`
 
   & .signOutContainer {
     margin-top: 350px;
+    cursor: pointer;
   }
 
   @media(max-width: 1690px){

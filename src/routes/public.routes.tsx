@@ -1,3 +1,4 @@
+import { ConfirmEmail } from "../pages/ConfirmEmail";
 import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
 
@@ -11,5 +12,9 @@ export const publicRoutes = [
     {
         path:"/cadastro",
         element: <SignUp/>
+    },
+    {
+        path:"/confirmar-email",
+        element: <ConfirmEmail/>
     },
 ];

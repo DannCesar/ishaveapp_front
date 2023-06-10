@@ -23,7 +23,7 @@ const formSignUp = useFormik({
     },onSubmit: async (values)=> {
         //preenchimento dos campos do formulário
         try{
-            await  userApi.crateUser({
+            await  userApi.createUser({
                nomeEmpresa: values.nomeEmpresa,
                cnpjEmpresa: values.cnpjEmpresa,
                telEmpresa: values.telEmpresa,
