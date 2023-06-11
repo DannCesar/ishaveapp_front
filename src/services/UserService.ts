@@ -66,4 +66,10 @@ export class UserService {
     });
     return data;
   }
+
+  async confirmEmail(hashUser:string){
+    console.log('confirmar')
+    const {data} = await api.get(`/confirmMail?d=${hashUser}`)
+    return data
+  }
 }

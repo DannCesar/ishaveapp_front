@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { UserService } from "../../services/UserService";
+
+const confirmEmailApi = new UserService()
 
 export const ConfirmEmail: React.FC = () => {
     const navigate = useNavigate()
+    const location = useLocation()
+    useEffect(() => {
+      const reqConfirmEmail = async () => {
+        try{
+          const valueArray = location.search.split("=")
+          console.log("value",valueArray)
+          const hashUserD = valueArray[1]
+          await confirmEmailApi.confirmEmail(hashUserD)
+        }catch(error){
+          console.log(error)
+        }
+      }
+      reqConfirmEmail()
+    },[])
   return (
     <>
       <S.Container>
