@@ -5,12 +5,14 @@ import { UserIcon } from "../../assets/Icons/UserIcon/UserIcon";
 import { SccisorsIcon } from "../../assets/Icons/SccissorsIcon/SccisorsIcon";
 import { ScheduleIcon } from "../../assets/Icons/ScheduleIcon/ScheduleIcon";
 import { SignOutIcon } from "../../assets/Icons/SignOutIcon/SignOutIcon";
+import { useNavigate } from "react-router-dom";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export const Layout: React.FC<LayoutProps> = () => {
+  const navigate = useNavigate()
   return (
     <S.Container>
       <S.NavigationLayout>
@@ -38,7 +40,7 @@ export const Layout: React.FC<LayoutProps> = () => {
           <h3>Nome do usuário</h3>
         </div>
         <div className="signOutContainer">
-          <SignOutIcon onClick={() => {}}/>
+          <SignOutIcon onClick={() => navigate('/')}/>
         </div>
       </S.Sidebar>
       <S.ContentContainer></S.ContentContainer>
