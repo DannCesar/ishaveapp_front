@@ -27,6 +27,7 @@ export const useSignIn = () => {
         });
         localStorage.setItem("ishaveappId",data.idSession.toString())
       } catch (error) {
+        console.log(error)
         alert(
           "Erro ao realizar login, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
