@@ -68,14 +68,9 @@ export class UserService {
     return data;
   }
 
-<<<<<<< HEAD
   async confirmEmail(d:string, v:string){
     console.log('confirmar')
     const {data} = await api.get(`/confirmMail?d=${d}&v=${v}`)
-=======
-  async confirmEmail(hashUser:string){
-    const {data} = await api.get(`/confirmMail?d=${hashUser}`)
->>>>>>> ad923ffd9d4cbc3d154e6a19ffbfcfb7ba450c12
     return data
   }
 
