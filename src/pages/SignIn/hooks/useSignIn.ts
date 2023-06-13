@@ -29,7 +29,7 @@ export const useSignIn = () => {
       } catch (error) {
         console.log(error)
         alert(
-          "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"
+          "Erro ao realizar login, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
       }
     },

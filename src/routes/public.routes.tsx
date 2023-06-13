@@ -6,7 +6,7 @@ import { SignUp } from "../pages/SignUp";
 
 export const publicRoutes = [
     {
-        path:"/",
+        path:"/login",
         element: <SignIn/>
     },
     {
