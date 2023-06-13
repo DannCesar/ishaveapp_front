@@ -21,6 +21,7 @@ interface LoginUserProps {
   senhaUsuario: string;
 }
 
+
 //Criação da classe e exportação para requisição do signUp e singIn
 
 export class UserService {
@@ -68,8 +69,12 @@ export class UserService {
   }
 
   async confirmEmail(hashUser:string){
-    console.log('confirmar')
     const {data} = await api.get(`/confirmMail?d=${hashUser}`)
+    return data
+  }
+
+  async signOut(idSession:any){
+    const {data} = await api.delete(`/logout`)
     return data
   }
 }

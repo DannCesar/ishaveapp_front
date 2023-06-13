@@ -59,7 +59,7 @@ export const SignUp: React.FC = () => {
             />
             </div>
             <div className="btnContainer">
-            <Button onClick={() => navigate("/")}>Voltar</Button>
+            <Button onClick={() => navigate("/login")}>Voltar</Button>
               <Button model="main" type="submit">
                 Cadastrar
               </Button>
