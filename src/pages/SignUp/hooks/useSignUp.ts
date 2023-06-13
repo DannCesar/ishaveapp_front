@@ -15,7 +15,7 @@ const formSignUp = useFormik({
         senhaUsuario: '',
         cep: '',
         logradouro: '',
-        numeroEmpresa: '',
+        numEmpresa: '',
         bairro: '',
         cidade: '',
         uf: ''
@@ -31,7 +31,7 @@ const formSignUp = useFormik({
                senhaUsuario: values.senhaUsuario,
                cep: values.cep,
                logradouro: values.logradouro,
-               numeroEmpresa: values.numeroEmpresa,
+               numEmpresa: values.numEmpresa,
                bairro: values.bairro,
                cidade: values.cidade,
                uf: values.uf

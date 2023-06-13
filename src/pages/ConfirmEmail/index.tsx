@@ -31,7 +31,7 @@ export const ConfirmEmail: React.FC = () => {
             <h3>Email confirmado com sucesso!</h3>
           </div>
           <div className="btnContainer">
-            <Button model="alternative" onClick={() => navigate('/')}>Acessar login</Button>
+            <Button model="alternative" onClick={() => navigate('/login')}>Acessar login</Button>
           </div>
         </S.ConfirmEmailModal>
       </S.Container>

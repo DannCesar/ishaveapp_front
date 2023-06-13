@@ -10,7 +10,7 @@ interface CreateUserProps {
   senhaUsuario: string;
   cep: string;
   logradouro: string;
-  numeroEmpresa: string;
+  numEmpresa: string;
   bairro: string;
   cidade: string;
   uf: string;
@@ -33,7 +33,7 @@ export class UserService {
     senhaUsuario,
     cep,
     logradouro,
-    numeroEmpresa,
+    numEmpresa,
     bairro,
     cidade,
     uf,
@@ -47,7 +47,7 @@ export class UserService {
       endereco: {
         cep,
         logradouro,
-        numeroEmpresa,
+        numEmpresa,
         bairro,
         cidade,
         uf,
