@@ -6,7 +6,7 @@ import { Scheduling } from "../pages/Scheduling";
 
 export const privateRoutes = [
     {
-        path: "/",
+        path: "/login",
         element: <Home/>
     },
     {

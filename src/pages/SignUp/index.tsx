@@ -10,7 +10,7 @@ const cepApi = new AddressService();
 
 export const SignUp: React.FC = () => {
   const navigate = useNavigate();
-  const { formSignUp } = useSignUp();
+  const { formSignUp ,loading} = useSignUp();
   useEffect(() => {
     const getCep = async () => {
       const searchCep = formSignUp?.values?.cep?.replace("-", "");
@@ -60,7 +60,7 @@ export const SignUp: React.FC = () => {
             </div>
             <div className="btnContainer">
             <Button onClick={() => navigate("/login")}>Voltar</Button>
-              <Button model="main" type="submit">
+              <Button model="main" type="submit" loading={loading}>
                 Cadastrar
               </Button>
             </div>

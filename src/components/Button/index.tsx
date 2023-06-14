@@ -6,12 +6,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     model?: "main" | "alternative";
     height?: number;
     width?: number;
+    loading?:boolean
   }
 export const Button: React.FC<ButtonProps> = ({
     model = "main",
     height,
     type = "button",
     onClick = () => {},
+    loading = false,
     ...rest
 }) => {
     return(
@@ -19,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
         model={model}
         height={height}
         type={type}
-        onClick={(e) => onClick(e)}
+        onClick={loading? () => {} : (e) => onClick(e)}
         {...rest}
         />
           
