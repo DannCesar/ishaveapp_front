@@ -10,7 +10,7 @@ interface CreateUserProps {
   senhaUsuario: string;
   cep: string;
   logradouro: string;
-  numeroEmpresa: string;
+  numEmpresa: string;
   bairro: string;
   cidade: string;
   uf: string;
@@ -20,6 +20,7 @@ interface LoginUserProps {
   emailUsuario: string;
   senhaUsuario: string;
 }
+
 
 //Criação da classe e exportação para requisição do signUp e singIn
 
@@ -32,7 +33,7 @@ export class UserService {
     senhaUsuario,
     cep,
     logradouro,
-    numeroEmpresa,
+    numEmpresa,
     bairro,
     cidade,
     uf,
@@ -46,7 +47,7 @@ export class UserService {
       endereco: {
         cep,
         logradouro,
-        numeroEmpresa,
+        numEmpresa,
         bairro,
         cidade,
         uf,
@@ -67,9 +68,14 @@ export class UserService {
     return data;
   }
 
-  async confirmEmail(hashUser:string){
+  async confirmEmail(d:string, v:string){
     console.log('confirmar')
-    const {data} = await api.get(`/confirmMail?d=${hashUser}`)
+    const {data} = await api.get(`/confirmMail?d=${d}&v=${v}`)
+    return data
+  }
+
+  async signOut(idSession:any){
+    const {data} = await api.delete(`/logout`)
     return data
   }
 }

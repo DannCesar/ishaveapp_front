@@ -3,6 +3,7 @@ import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserService } from "../../services/UserService";
+import queryString from 'query-string';
 
 const confirmEmailApi = new UserService()
 
@@ -12,10 +13,10 @@ export const ConfirmEmail: React.FC = () => {
     useEffect(() => {
       const reqConfirmEmail = async () => {
         try{
-          const valueArray = location.search.split("=")
-          console.log("value",valueArray)
-          const hashUserD = valueArray[1]
-          await confirmEmailApi.confirmEmail(hashUserD)
+    
+          const params = queryString.parse(location.search)
+          await confirmEmailApi.confirmEmail(params.d, params.v)
+           
         }catch(error){
           console.log(error)
         }
@@ -30,7 +31,7 @@ export const ConfirmEmail: React.FC = () => {
             <h3>Email confirmado com sucesso!</h3>
           </div>
           <div className="btnContainer">
-            <Button model="alternative" onClick={() => navigate('/')}>Acessar login</Button>
+            <Button model="alternative" onClick={() => navigate('/login')}>Acessar login</Button>
           </div>
         </S.ConfirmEmailModal>
       </S.Container>
