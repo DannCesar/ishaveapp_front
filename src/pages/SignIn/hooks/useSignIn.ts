@@ -26,12 +26,21 @@ export const useSignIn = () => {
           senhaUsuario: values.senhaUsuario,
         });
         localStorage.setItem("ishaveappId",data.idSession.toString())
+        
+        //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
+        if(data.idSession > 0){
+          window.location.reload()
+        }else{
+          alert(data.message)
+        }
+        
       } catch (error) {
         alert(
           "Erro ao realizar login, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
       }
     },
+    
     validationSchema:schema
   });
   return {
