@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import { UserService } from "../../../services/UserService";
+import { useNavigate } from "react-router-dom";
 import * as yup from 'yup';
 
 // instanciação da classe do UserService
@@ -13,6 +14,7 @@ const schema = yup.object().shape({
 
 //form
 export const useSignIn = () => {
+  const navigate = useNavigate();
   const formSignIn = useFormik({
     initialValues: {
       emailUsuario: "",
@@ -29,6 +31,7 @@ export const useSignIn = () => {
         
         //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
         if(data.idSession > 0){
+          navigate('/')
           window.location.reload()
         }else{
           alert(data.message)
