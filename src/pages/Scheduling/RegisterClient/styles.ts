@@ -21,7 +21,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 700px;
-  height: 420px;
+  height: 380px;
   margin-top: 20px;
   background-color: ${({theme}) => theme.colors.ice};
   color: ${({ theme }) => theme.colors.black};

@@ -1,6 +1,7 @@
 import { Layout } from "../components/Layout";
 import { Home } from "../pages/Home";
-import { Scheduling } from "../pages/Scheduling";
+import { RegisterClient } from "../pages/Scheduling/RegisterClient";
+
 
 
 
@@ -10,7 +11,7 @@ export const privateRoutes = [
         element: <Home/>
     },
     {
-        path: "/agendamento",
-        element: <Scheduling/>
+        path: "/registro-do-cliente",
+        element: <RegisterClient/>
     }
 ]

@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
 import React from "react";
 
-export const useScheduling = () => {
- const schedulingForm = useFormik({
+export const useRegisterClient = () => {
+ const registerClientForm = useFormik({
     initialValues:{
         cpf: "",
         nome: "",
@@ -20,6 +20,6 @@ export const useScheduling = () => {
     }
  })
     return{
-        schedulingForm
+        registerClientForm
     }
 }

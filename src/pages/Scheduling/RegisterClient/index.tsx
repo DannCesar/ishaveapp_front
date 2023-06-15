@@ -1,37 +1,37 @@
 import React from "react";
-import { Layout } from "../../components/Layout";
+import { Layout } from "../../../components/Layout";
 import * as S from "./styles";
-import { Button } from "../../components/Button";
-import { TextInput } from "../../components/TextInput";
-import { useScheduling } from "./hooks/useScheduling";
+import { Button } from "../../../components/Button";
+import { TextInput } from "../../../components/TextInput";
+import { useRegisterClient} from "./hooks/useRegisterClient";
 
-export const Scheduling: React.FC = () => {
-  const { schedulingForm } = useScheduling();
+export const RegisterClient: React.FC = () => {
+  const { registerClientForm } = useRegisterClient();
   return (
     <>
       <Layout>
         <S.Container>
-          <S.FormContainer onSubmit={schedulingForm.handleSubmit}>
+          <S.FormContainer onSubmit={registerClientForm.handleSubmit}>
             <h4>Formulário de Cadastro</h4>
             <div className="formClient">
-              <TextInput label="CPF" name="cpf" form={schedulingForm} />
-              <TextInput label="Nome" name="nome" form={schedulingForm} />
+              <TextInput label="CPF" name="cpf" form={registerClientForm} />
+              <TextInput label="Nome" name="nome" form={registerClientForm} />
               <TextInput
                 label="Sobrenome"
                 name="sobrenome"
-                form={schedulingForm}
+                form={registerClientForm}
               />
               <TextInput
                 label="Telefone"
                 name="telefone"
-                form={schedulingForm}
+                form={registerClientForm}
               />
-              <TextInput label="Email" name="email" form={schedulingForm} />
-            </div>
+              <TextInput label="Email" name="email" form={registerClientForm} />
             <div className="btnContainer">
               <Button model="alternative" type="submit">
                 Cadastrar
               </Button>
+            </div>
             </div>
           </S.FormContainer>
           <div className="nextContainer">
