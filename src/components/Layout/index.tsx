@@ -15,7 +15,7 @@ interface LayoutProps {
   idSession: any
 }
 
-export const Layout: React.FC<LayoutProps> = () => {
+export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
 
@@ -80,7 +80,9 @@ export const Layout: React.FC<LayoutProps> = () => {
           <SignOutIcon onClick={() => userSignOut} />
         </div>
       </S.Sidebar>
-      <S.ContentContainer></S.ContentContainer>
+      <S.ContentContainer {...props}>
+        <div>{children}</div>
+      </S.ContentContainer>
     </S.Container>
   );
 };
