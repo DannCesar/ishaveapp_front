@@ -1,4 +1,5 @@
 import { ConfirmEmail } from "../pages/ConfirmEmail";
+import { PageNotFound } from "../pages/PageNotFound";
 import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
 
@@ -6,7 +7,7 @@ import { SignUp } from "../pages/SignUp";
 
 export const publicRoutes = [
     {
-        path:"/login",
+        path:"/",
         element: <SignIn/>
     },
     {
@@ -16,5 +17,9 @@ export const publicRoutes = [
     {
         path:"/confirmar-email",
         element: <ConfirmEmail/>
+    },
+    {
+        path:"*",
+        element: <PageNotFound/>
     },
 ];

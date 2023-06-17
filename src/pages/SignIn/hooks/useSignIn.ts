@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { UserService } from "../../../services/UserService";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 // instanciação da classe do UserService
 const userApi = new UserService();
@@ -17,6 +18,7 @@ const schema = yup.object().shape({
 
 export const useSignIn = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
   
   //recarregar a página após realizar requisição
   // useEffect(() => {
@@ -38,7 +40,16 @@ export const useSignIn = () => {
           emailUsuario: values.emailUsuario,
           senhaUsuario: values.senhaUsuario,
         });
-        localStorage.setItem("ishaveappId", data.idSession.toString());
+        localStorage.setItem("ishaveappId",data.idSession.toString())
+        
+        //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
+        if(data.idSession > 0){
+          navigate('/')
+          window.location.reload()
+        }else{
+          alert(data.message)
+        }
+        
       } catch (error) {
         console.log(error);
         alert(
