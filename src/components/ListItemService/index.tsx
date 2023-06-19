@@ -1,5 +1,8 @@
 import React from "react";
 import * as S from "./styles"
+import { RegisterService } from "../../services/RegisterService";
+
+const apiService = new RegisterService()
 
 export const ListItemService: React.FC = () => {
     return(
