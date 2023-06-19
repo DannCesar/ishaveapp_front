@@ -5,6 +5,7 @@ import { FormRegisterModal } from "../../components/FormRegisterClientModal";
 import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
 import { RegisterServiceModal } from "../../components/RegisterServiceModal";
+import { ListItemService } from "../../components/ListItemService";
 
 export const Service: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
@@ -17,6 +18,11 @@ export const Service: React.FC = () => {
           <S.Header>
             <div className="searchContainer">
               <SearchInput></SearchInput>
+              <span>Pesquisar por :</span>
+                <select >
+                  <option value="nomeServico">Serviço</option>
+                  <option value="categoriaServico">Categoria</option>
+                </select>
               <Button model="alternative">Consultar</Button>
             </div>
             <div className="btnContainer">
@@ -25,9 +31,12 @@ export const Service: React.FC = () => {
               </Button>
             </div>
           </S.Header>
+          <div className="spanContainer">
+              <span>Não há serviço cadastrado.</span>
+            </div>
           <S.Content>
-            
           </S.Content>
+            <ListItemService/>
         </S.Container>
       </Layout>
     </>

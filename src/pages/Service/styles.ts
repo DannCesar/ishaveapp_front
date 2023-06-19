@@ -10,6 +10,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 16px;
+
+  & .spanContainer{
+    display: flex;
+    color: #fff;
+    justify-content: flex-start;
+    margin-left: -1050px;
+  }
 `;
 
 export const Header = styled.div`
@@ -24,6 +31,17 @@ margin-left: -50px;
 & .searchContainer{
   display: flex;
   gap: 4px;
+  & select{
+    width: 130px;
+    padding: 4px 8px;
+    border-radius: 12px;
+
+  
+  }
+
+  & span{
+    color: #fff;
+  }
 }
 
 `;

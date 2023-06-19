@@ -12,10 +12,9 @@ const userApi = new UserService();
 
 interface LayoutProps {
   children: React.ReactNode;
-  idSession: any
 }
 
-export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
+export const Layout: React.FC<LayoutProps> = ({ children, props }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
 
@@ -26,7 +25,6 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
       //Verificando se o valor existe
       if (userLocalStorage) {
         setUser(userLocalStorage);
-
       }
     },
     // Quando a condição do array estiver vazia,significa que quando for carregada a página será executada
@@ -35,13 +33,10 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
 
   // Função assincrona para deletar o idSession / Valor do localstorage
   const signOut = () => {
-      localStorage.removeItem("ishaveappId")
-      navigate("/")
-      window.location.reload()
-    
-  }
-     
-    
+    localStorage.removeItem("ishaveappId");
+    navigate("/");
+    window.location.reload();
+  };
 
   return (
     <S.Container>
