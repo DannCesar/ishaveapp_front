@@ -24,16 +24,13 @@ display: flex ;
 align-items: center;
 position: fixed;
 width: 1220px;
-justify-content: end;
+justify-content: space-between;
 margin-top: -600px;
 margin-left: -50px;
 
-
 & .searchContainer{
   display: flex;
-  align-items: center;
-  gap: 12px;
-
+  gap: 4px;
   & select{
     width: 130px;
     padding: 4px 8px;

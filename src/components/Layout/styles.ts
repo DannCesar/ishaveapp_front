@@ -94,7 +94,7 @@ export const Sidebar = styled.div`
 `;
 export const AvatarContainer = styled.div`
   display: flex;
-  margin-top: 78px;
+  margin-top: 60px;
   margin-left: 40px;
   margin-bottom: 20px;
   width: 100px;

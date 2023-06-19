@@ -1,10 +1,16 @@
 import React from "react";
 import * as S from "./styles"
 
-export const Modal: React.FC = () => {
+interface ModalProps{
+    close(): void;
+}
+
+export const Modal: React.FC<ModalProps> = ({
+    close
+}) => {
     return(
         <>
-            <S.Backdrop/>
+            <S.Backdrop onClick={close}/>
             <S.InfoModal>
                 
             </S.InfoModal>

@@ -1,3 +1,4 @@
+import { Client } from "../pages/Client";
 import { ConfirmEmail } from "../pages/ConfirmEmail";
 import { PageNotFound } from "../pages/PageNotFound";
 import { SignIn } from "../pages/SignIn";
@@ -17,6 +18,10 @@ export const publicRoutes = [
     {
         path:"/confirmar-email",
         element: <ConfirmEmail/>
+    },
+    {
+        path: "/clientes",
+        element: <Client/>
     },
     {
         path:"*",

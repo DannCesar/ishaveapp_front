@@ -17,7 +17,6 @@ const schema = yup.object().shape({
 });
 
 export const useSignIn = () => {
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
   
   //recarregar a página após realizar requisição
@@ -33,20 +32,30 @@ export const useSignIn = () => {
       senhaUsuario: "",
     },
     onSubmit: async (values) => {
-      setLoading(true);
+     
       //preenchimento dos campos do formulário
       try {
         const data = await userApi.loginUser({
           emailUsuario: values.emailUsuario,
           senhaUsuario: values.senhaUsuario,
         });
+<<<<<<< HEAD
         
+=======
+>>>>>>> da29395c89041550f4aa59335d43a2ac2b5f96f9
         
         //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
         if(data.idSession > 0){
-          navigate('/')
-          window.location.reload()
           localStorage.setItem("ishaveappId",data.idSession.toString())
+          window.location.reload()
+<<<<<<< HEAD
+          localStorage.setItem("ishaveappId",data.idSession.toString())
+=======
+          navigate('/')
+
+         
+
+>>>>>>> da29395c89041550f4aa59335d43a2ac2b5f96f9
         }else{
           alert(data.message)
         }
@@ -56,13 +65,13 @@ export const useSignIn = () => {
         alert(
           "Erro ao realizar login, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
-        setLoading(false);
+        
       }
     },
     validationSchema: schema,
   });
   return {
     formSignIn,
-    loading,
+    
   };
 };

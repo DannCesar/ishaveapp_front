@@ -24,7 +24,7 @@ display: flex ;
 align-items: center;
 position: fixed;
 width: 1220px;
-justify-content: end;
+justify-content: space-between;
 margin-top: -600px;
 margin-left: -50px;
 

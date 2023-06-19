@@ -51,15 +51,16 @@ export const SignUp: React.FC = () => {
             <TextInput label="Cidade" name="cidade" form={formSignUp} />
             <TextInput label="Numero" name="numeroEmpresa" form={formSignUp} />
             <TextInput label="UF" name="uf" form={formSignUp} />
-            <TextInput label="Senha" name="senhaUsuario" form={formSignUp} />
+            <TextInput type="password" label="Senha" name="senhaUsuario" form={formSignUp} />
             <TextInput
+              type="password"
               label="Confirmar Senha"
               name="senhaUsuario"
               form={formSignUp}
             />
             </div>
             <div className="btnContainer">
-            <Button onClick={() => navigate("/login")}>Voltar</Button>
+            <Button onClick={() => navigate("/")}>Voltar</Button>
               <Button model="main" type="submit" loading={loading}>
                 Cadastrar
               </Button>
