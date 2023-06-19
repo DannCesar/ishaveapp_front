@@ -21,20 +21,20 @@ export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
       <S.FormContainer onSubmit={registerClientForm.handleSubmit}>
         <h4>Cadastro do Cliente</h4>
         <div className="formClient">
-          <TextInput label="Nome" name="nome" form={registerClientForm} />
+          <TextInput label="Nome" name="nomeCliente" form={registerClientForm} />
           <TextInput
             label="Sobrenome"
             name="sobrenome"
             form={registerClientForm}
           />
-          <TextInput label="CPF" name="cpf" form={registerClientForm} />
+          <TextInput label="CPF" name="cpfCliente" form={registerClientForm} />
           <TextInput label="Data de Nascimento" name="dataNascCliente" form={registerClientForm} />
           <TextInput
             label="Telefone"
-            name="telefone"
+            name="telCliente"
             form={registerClientForm}
           />
-          <TextInput label="Email" name="email" form={registerClientForm} />
+          <TextInput label="Email" name="emailCliente" form={registerClientForm} />
         </div>
           <div className="btnContainer">
             <Button  model="alternative" onClick={close} >

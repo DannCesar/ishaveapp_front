@@ -14,7 +14,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children, props }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
 
