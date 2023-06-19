@@ -61,6 +61,7 @@ width: 1250px;
   border-radius: 12px;
   flex-direction: column;
   width: 1200px;
+  margin-bottom: 380px;
   margin-left: 980px;
   margin-right: 40px;
 }
