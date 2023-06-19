@@ -40,12 +40,13 @@ export const useSignIn = () => {
           emailUsuario: values.emailUsuario,
           senhaUsuario: values.senhaUsuario,
         });
-        localStorage.setItem("ishaveappId",data.idSession.toString())
+        
         
         //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
         if(data.idSession > 0){
           navigate('/')
           window.location.reload()
+          localStorage.setItem("ishaveappId",data.idSession.toString())
         }else{
           alert(data.message)
         }
