@@ -35,7 +35,6 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
 
   // Função assincrona para deletar o idSession / Valor do localstorage
   const signOut = () => {
-    alert("foi")
       localStorage.removeItem("ishaveappId")
       navigate("/")
       window.location.reload()
@@ -61,7 +60,7 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
           Serviços
         </div>
         <div className="navigation">
-          <ScheduleIcon onClick={() => {}} />
+          <ScheduleIcon onClick={() => navigate("/agendamento")} />
           Agendamento
         </div>
       </S.NavigationLayout>
