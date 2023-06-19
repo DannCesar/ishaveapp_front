@@ -9,7 +9,7 @@ export const SearchInput: React.FC<SearchInputProps> =(props) => {
     return(
         <>
             <S.Container>
-                <input type="text" {...props} placeholder="Pesquisar"/>
+                <input type="text" {...props} placeholder="Insira sua busca..."/>
             </S.Container>
         </>
     )

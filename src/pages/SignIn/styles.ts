@@ -11,6 +11,8 @@ export const ContentFormContainer = styled.form`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
 
+  
+
   & .contentContainer {
     display: flex;
     flex-direction: column;
@@ -22,6 +24,11 @@ export const ContentFormContainer = styled.form`
       padding: 4px;
       align-items: center;
       margin-top: 12px;
+    }
+
+    & input {
+      width: 240px;
+      margin-top: 8px;
     }
   }
 
@@ -45,6 +52,7 @@ export const ContentFormContainer = styled.form`
   }
   & .spanContainer {
       margin-top: -20px;
+      margin-left: 48px;
       font-size: 12px;
       display: flex;
       justify-content: end;

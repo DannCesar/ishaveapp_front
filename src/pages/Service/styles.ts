@@ -23,20 +23,7 @@ margin-left: -50px;
 
 & .searchContainer{
   display: flex;
-  align-items: center;
-  gap: 12px;
-
-  & select{
-    width: 130px;
-    padding: 4px 8px;
-    border-radius: 12px;
-
-  
-  }
-
-  & span{
-    color: #fff;
-  }
+  gap: 4px;
 }
 
 `;

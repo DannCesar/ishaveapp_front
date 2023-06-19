@@ -32,6 +32,10 @@ export const InfoFormContainer = styled.div`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
 
+  & .contentContainer{
+    margin-top: 20px;
+  }
+
   & .inputContainer {
     display: flex;
     flex-direction: column;
@@ -40,10 +44,9 @@ export const InfoFormContainer = styled.div`
     margin-left: 110px;
 
     & input {
-      width: 300px;
+      width: 240px;
       height: 36px;
       margin-top: 10px;
-      margin-bottom: 10px;
       border-radius: 8px;
       border: none;
       background-color: ${({ theme }) => theme.colors.ice};
@@ -67,7 +70,7 @@ export const InfoFormContainer = styled.div`
     display: flex;
     height: 40px;
     gap: 50px;
-    margin-top: 100px;
+    margin-top: 20px;
     align-items: center;
     justify-content: center;
     border: none;
@@ -83,8 +86,15 @@ export const InfoFormContainer = styled.div`
 
 export const FormContainer = styled.form`
   & .infoContainer {
+    margin-top: 20px;
+    background-color: ${({theme}) => theme.colors.brown};
+    justify-content: center;
     display: grid;
+    width: 1400px;
+    height: 600px;
+    margin-left: 100px;
     grid-template-columns: 1fr 1fr 1fr;
+    border-radius: ${({theme}) => theme.borderRadius.modal};
 
     @media (max-width: 1333px) {
       width: 600px;

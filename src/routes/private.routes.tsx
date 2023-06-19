@@ -1,8 +1,9 @@
 import { Layout } from "../components/Layout";
+import { Client } from "../pages/Client";
 import { Home } from "../pages/Home";
 import { PageNotFound } from "../pages/PageNotFound";
 import { Scheduling } from "../pages/Scheduling";
-import { RegisterClient } from "../pages/Scheduling/RegisterClient";
+import { Service } from "../pages/Service";
 
 
 //Rota privada para quando estiver logado
@@ -13,8 +14,12 @@ export const privateRoutes = [
         element: <Home/>
     },
     {
-        path: "/registro-do-cliente",
-        element: <RegisterClient/>
+        path: "/clientes",
+        element: <Client/>
+    },
+    {
+        path: "/servicos",
+        element: <Service/>
     },
     {
         path: "/agendamento",

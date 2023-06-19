@@ -7,6 +7,7 @@ export const useRegisterClient = () => {
         cpf: "",
         nome: "",
         sobrenome: "",
+        dataNascCliente: "",
         telefone: "",
         email: ""
 

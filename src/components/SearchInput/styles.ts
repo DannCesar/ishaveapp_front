@@ -12,5 +12,7 @@ gap: 8px;
     display: flex;
     border: none;
     font-size: 16px;
+    border-radius: 8px;
+    padding: 4px 8px;
  }
 `;

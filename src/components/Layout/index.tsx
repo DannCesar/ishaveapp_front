@@ -35,18 +35,12 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
 
   // Função assincrona para deletar o idSession / Valor do localstorage
   const signOut = () => {
-    if(user) {
+    alert("foi")
       localStorage.removeItem("ishaveappId")
-      setUser("")
-    }
+      navigate("/")
+      window.location.reload()
+    
   }
-  
-  const userSignOut = useCallback(async () => {
-      await userApi.signOut(idSession);
-      localStorage.removeItem("ishaveappId");
-      setUser("");
-    },
-     [0]);
      
     
 
@@ -59,11 +53,11 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
           Inicio
         </div>
         <div className="navigation">
-          <UserIcon onClick={() => {}} />
+          <UserIcon onClick={() => navigate("/clientes")} />
           Clientes
         </div>
         <div className="navigation">
-          <SccisorsIcon onClick={() => {}} />
+          <SccisorsIcon onClick={() => navigate("/servicos")} />
           Serviços
         </div>
         <div className="navigation">
@@ -77,7 +71,7 @@ export const Layout: React.FC<LayoutProps> = ({children,props,idSession}) => {
           <h3>Nome do usuário</h3>
         </div>
         <div className="signOutContainer">
-          <SignOutIcon onClick={() => userSignOut} />
+          <SignOutIcon onClick={() => signOut()} />
         </div>
       </S.Sidebar>
       <S.ContentContainer {...props}>
