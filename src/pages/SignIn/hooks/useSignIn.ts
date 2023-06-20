@@ -39,23 +39,12 @@ export const useSignIn = () => {
           emailUsuario: values.emailUsuario,
           senhaUsuario: values.senhaUsuario,
         });
-<<<<<<< HEAD
         
-=======
->>>>>>> da29395c89041550f4aa59335d43a2ac2b5f96f9
         
         //Aparentemente funciona, mas talvez tenha uma maneira mais elegante de lidar com isso
         if(data.idSession > 0){
-          localStorage.setItem("ishaveappId",data.idSession.toString())
+          localStorage.setItem("ishaveappId", data.idSession.toString())
           window.location.reload()
-<<<<<<< HEAD
-          localStorage.setItem("ishaveappId",data.idSession.toString())
-=======
-          navigate('/')
-
-         
-
->>>>>>> da29395c89041550f4aa59335d43a2ac2b5f96f9
         }else{
           alert(data.message)
         }
