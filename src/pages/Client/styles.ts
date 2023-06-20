@@ -11,14 +11,14 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 16px;
 
-  @media (max-width:1333px){
+  @media (max-width: 1333px) {
     width: 500px;
     margin-top: 130px;
     margin-left: 400px;
     height: 400px;
   }
 
-  & .spanContainer{
+  & .spanContainer {
     display: flex;
     color: #fff;
     justify-content: flex-start;
@@ -27,43 +27,38 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-display: flex ;
-align-items: center;
-position: fixed;
-width: 1220px;
-justify-content: space-between;
-margin-top: -600px;
-margin-left: -50px;
-
-@media (max-width: 1333px){
-  width: 1050px;
-  margin-left: -220px;
-  margin-top: -580px;
-}
-
-
-& .searchContainer{
   display: flex;
   align-items: center;
-  gap: 12px;
+  position: fixed;
+  width: 1220px;
+  justify-content: space-between;
+  margin-top: -600px;
+  margin-left: -50px;
 
-  & select{
-    width: 130px;
-    padding: 4px 8px;
-    border-radius: 12px;
-
-  
+  @media (max-width: 1333px) {
+    width: 1050px;
+    margin-left: -220px;
+    margin-top: -580px;
   }
 
-  & span{
-    color: #fff;
-  }
-}
+  & .searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+    & select {
+      width: 130px;
+      padding: 4px 8px;
+      border-radius: 12px;
+    }
+
+    & span {
+      color: #fff;
+    }
+  }
 `;
 
 export const Content = styled.div`
-display: flex;
-width: 1220px;
-
+  display: flex;
+  width: 1220px;
 `;

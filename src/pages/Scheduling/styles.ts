@@ -59,11 +59,9 @@ margin-left: -50px;
 export const Content = styled.div`
 display: flex;
 width: 1250px;
-background-color: aliceblue;
 
-@media (max-width:1333px){
-  height
-}
+
+
 
 & .spanContainer{
   display: flex;

@@ -6,10 +6,16 @@ import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useQuery } from "react-query";
 
 export const Scheduling: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
+  const {data: agendamento } = useQuery("agendamento",
+    async () => {
+
+    }
+    )
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}
