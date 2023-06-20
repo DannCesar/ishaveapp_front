@@ -53,6 +53,7 @@ export const Scheduling: React.FC = () => {
               />
             </div>
           </S.Content>
+            <Button type="submit">Agendar</Button>
         </S.Container>
       </Layout>
     </>
