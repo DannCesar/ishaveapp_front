@@ -4,10 +4,19 @@ import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { FormRegisterModal } from "../../components/FormRegisterClientModal";
 import { SearchInput } from "../../components/SearchInput";
-import {  ListItemClient } from "../../components/ListItemClient";
+import {  ListItemClient } from "./ListItemClient";
+import { ClientService } from "../../services/ClientService";
+import { useQuery } from "react-query";
+
+const clientApi = new ClientService()
 
 export const Client: React.FC = () => {
     const [modalCad, setModalCad] = useState(false);
+    // const {data : cliente} = useQuery("cliente",
+    // async () => {
+    //   return await clientApi?.
+    // }
+    // )
     return (
       <>
         {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}

@@ -15,6 +15,12 @@ export const FormContainer = styled.form`
   background-color: #fff;
   color: ${({ theme }) => theme.colors.black};
   border-radius: ${({ theme }) => theme.borderRadius.modal};
+
+  @media (max-width:1333px){
+    max-width: 50%;
+    max-height: 70%;
+  }
+
   h4 {
     text-align: center;
     margin-top: 20px;

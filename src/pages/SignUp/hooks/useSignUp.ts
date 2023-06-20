@@ -1,20 +1,39 @@
 import { useFormik } from "formik";
 import { UserService } from "../../../services/UserService";
 import { useEffect, useState } from "react";
+import { cnpj } from "cpf-cnpj-validator";
+import * as yup from "yup";
 
-//instanciação da classe UserService
+//Instanciação da classe UserService
 const userApi = new UserService();
+
+// Validação dos campos
+// const schema = yup.object().shape({
+//   nomeEmpresa: yup.string().required("Campo obrigatório"),
+//   cnpjEmpresa: yup
+//     .string()
+//     .required("Campo obrigatório")
+//     .test("oneOfRequired", "Informe um CNPJ válido", (item) => {
+//       if (item) return cnpj.isValid(item);
+//     }),
+//   telEmpresa: yup.string().required("Campo obrigatório"),
+//   emailUsuario: yup.string().required("Campo obrigatório"),
+//   senhaUsuario: yup
+//     .string()
+//     .required("Campo obrigatório")
+//     .min(8, "A senha precisa conter pelo menos 8 caracteres"),
+//   // confirmarSenha: yup.string().required("Campo obrigatório").oneOf([yup.ref("senhaUsuario")], "As senham precisam ser iguais"),
+//   cep: yup.string().required("Campo obrigatório"),
+//   logradouro: yup.string().required("Campo obrigatório"),
+//   numEmpresa: yup.string().required("Campo obrigatório"),
+//   bairro: yup.string().required("Campo obrigatório"),
+//   cidade: yup.string().required("Campo obrigatório"),
+//   uf: yup.string().required("Campo obrigatório"),
+// });
 
 export const useSignUp = () => {
   const [loading, setLoading] = useState(false);
 
-  //recarregar a página após realizar requisição
-//   useEffect(() => {
-//     if (loading) {
-//       window.location.reload();
-//     }
-//   }, [loading]);
-  //form
   const formSignUp = useFormik({
     initialValues: {
       nomeEmpresa: "",
@@ -30,7 +49,6 @@ export const useSignUp = () => {
       uf: "",
     },
     onSubmit: async (values) => {
-      setLoading(true);
       //preenchimento dos campos do formulário
       try {
         await userApi.createUser({
@@ -51,9 +69,9 @@ export const useSignUp = () => {
         alert(
           "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
-        setLoading(false);
       }
     },
+    // validationSchema: schema,
   });
   return {
     formSignUp,

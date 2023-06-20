@@ -38,12 +38,15 @@ export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
     window.location.reload();
   };
 
+  const changeScreen = () => {
+    navigate("/")
+  }
   return (
     <S.Container>
       <S.NavigationLayout>
         <h2>IShaveApp</h2>
         <div className="navigation">
-          <HomeIcon onClick={() => navigate(`/`)} />
+          <HomeIcon onClick={() => navigate("/")} />
           Inicio
         </div>
         <div className="navigation">

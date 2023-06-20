@@ -10,6 +10,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 16px;
+
+  @media (max-width:1333px){
+    width: 500px;
+    margin-top: 130px;
+    margin-left: 400px;
+    height: 400px;
+  }
 `;
 
 export const Header = styled.div`
@@ -20,6 +27,12 @@ width: 1220px;
 justify-content: space-between;
 margin-top: -600px;
 margin-left: -50px;
+
+@media (max-width: 1333px){
+  width: 1050px;
+  margin-left: -220px;
+  margin-top: -580px;
+}
 
 & .searchContainer{
   display: flex;
@@ -39,11 +52,15 @@ margin-left: -50px;
   }
 }
 
+
+
 `;
 
 export const Content = styled.div`
 display: flex;
 width: 1250px;
+
+
 
 
 & .spanContainer{
@@ -64,6 +81,14 @@ width: 1250px;
   margin-bottom: 380px;
   margin-left: 980px;
   margin-right: 40px;
+}
+
+@media (max-width:1333px){
+  & .schedulingContainer{
+    margin-top: 46px;
+    margin-left: 800px;
+    margin-right: 210px;
+  }
 }
 
 & .datePicker{

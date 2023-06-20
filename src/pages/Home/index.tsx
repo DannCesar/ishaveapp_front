@@ -2,11 +2,19 @@ import React from "react";
 import * as S from "./styles";
 import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
-import { ListItemScheduling } from "../../components/ListItemScheduling";
+
 import { useNavigate } from "react-router-dom";
+import { ListItemScheduling } from "../Scheduling/ListItemScheduling";
+import { UserService } from "../../services/UserService";
+
+const homeApi = new UserService()
 
 export const Home: React.FC = () => {
     const navigate = useNavigate()
+    // const {data: } = useQuery("home",
+    // async () => {
+    //   await 
+    // })
   return (
     <>
       <Layout>
@@ -14,7 +22,7 @@ export const Home: React.FC = () => {
           <S.Header>
             <div className="btnContainer">
               <Button model="main" onClick={() =>navigate("/agendamento")}>
-                Cadastrar Agendamento
+                Realizar Agendamento
               </Button>
             </div>
           </S.Header>

@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles"
-import { RegisterService } from "../../services/RegisterService";
+import { RegisterService } from "../../../services/RegisterService";
 
 const apiService = new RegisterService()
 
