@@ -9,6 +9,12 @@ padding: 12px;
 margin-left: -14px;
 margin-top: 10px;
 
+@media (max-width:1333px){
+    height: 330px;
+}
+
+
+
 & .list{
     margin-top: 10px;
     margin-left: 10px;

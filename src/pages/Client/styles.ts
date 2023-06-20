@@ -11,6 +11,13 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 16px;
 
+  @media (max-width:1333px){
+    width: 500px;
+    margin-top: 130px;
+    margin-left: 400px;
+    height: 400px;
+  }
+
   & .spanContainer{
     display: flex;
     color: #fff;
@@ -27,6 +34,12 @@ width: 1220px;
 justify-content: space-between;
 margin-top: -600px;
 margin-left: -50px;
+
+@media (max-width: 1333px){
+  width: 1050px;
+  margin-left: -220px;
+  margin-top: -580px;
+}
 
 
 & .searchContainer{
