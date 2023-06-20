@@ -20,7 +20,7 @@ export const Container = styled.div`
     display: flex;
     color: #fff;
     justify-content: flex-start;
-    margin-left: -1050px;
+    margin-left: -1010px;
   }
 
   @media (max-width:1333px){
@@ -62,6 +62,7 @@ margin-left: -50px;
   }
 
   & span{
+    margin-left: 200px;
     color: #fff;
   }
 }
@@ -70,6 +71,6 @@ margin-left: -50px;
 
 export const Content = styled.div`
 display: flex;
-width: 1220px;
+width: 1168px;
 
 `;

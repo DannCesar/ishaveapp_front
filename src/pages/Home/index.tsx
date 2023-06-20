@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
           <S.Header>
             <div className="btnContainer">
               <Button model="main" onClick={() =>navigate("/agendamento")}>
-                Cadastrar Agendamento
+                Realizar Agendamento
               </Button>
             </div>
           </S.Header>
