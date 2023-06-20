@@ -11,11 +11,11 @@ import { useQuery } from "react-query";
 export const Scheduling: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
-  const {data: agendamento } = useQuery("agendamento",
-    async () => {
+  // const {data: agendamento } = useQuery("agendamento",
+  //   async () => {
 
-    }
-    )
+  //   }
+  //   )
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}

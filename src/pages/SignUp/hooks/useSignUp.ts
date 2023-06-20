@@ -1,20 +1,34 @@
 import { useFormik } from "formik";
 import { UserService } from "../../../services/UserService";
 import { useEffect, useState } from "react";
+import { cnpj } from "cpf-cnpj-validator";
+import * as Yup from "yup";
 
-//instanciação da classe UserService
+//Instanciação da classe UserService
 const userApi = new UserService();
+
+// Validação dos campos
+const schema = Yup.object().shape({
+  nomeEmpresa: Yup.string().required("Campo obrigatório"),
+  cnpjEmpresa: Yup.string()
+    .required("Campo obrigatório")
+    .test("oneOfRequired", "Informe um CNPJ válido", (item) => {
+      if (item) return cnpj.isValid(item);
+    }),
+  telEmpresa: Yup.string().required("Campo obrigatório"),
+  emailUsuario: Yup.string().required("Campo obrigatório"),
+  senhaUsuario: Yup.string().required("Campo obrigatório"),
+  cep: Yup.string().required("Campo obrigatório"),
+  logradouro: Yup.string().required("Campo obrigatório"),
+  numEmpresa: Yup.string().required("Campo obrigatório"),
+  bairro: Yup.string().required("Campo obrigatório"),
+  cidade: Yup.string().required("Campo obrigatório"),
+  uf: Yup.string().required("Campo obrigatório"),
+});
 
 export const useSignUp = () => {
   const [loading, setLoading] = useState(false);
 
-  //recarregar a página após realizar requisição
-//   useEffect(() => {
-//     if (loading) {
-//       window.location.reload();
-//     }
-//   }, [loading]);
-  //form
   const formSignUp = useFormik({
     initialValues: {
       nomeEmpresa: "",
@@ -30,7 +44,6 @@ export const useSignUp = () => {
       uf: "",
     },
     onSubmit: async (values) => {
-      setLoading(true);
       //preenchimento dos campos do formulário
       try {
         await userApi.createUser({
@@ -51,9 +64,9 @@ export const useSignUp = () => {
         alert(
           "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"
         );
-        setLoading(false);
       }
     },
+    validationSchema: schema,
   });
   return {
     formSignUp,
