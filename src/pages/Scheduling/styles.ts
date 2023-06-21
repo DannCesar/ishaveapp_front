@@ -93,6 +93,7 @@ margin-bottom: 40px;
   height: 100px;
   margin-top: 12px;
   text-align: center;
+  margin-top: 30px;
 
   
 }
