@@ -20,10 +20,6 @@ export const publicRoutes = [
         element: <ConfirmEmail/>
     },
     {
-        path: "/clientes",
-        element: <Client/>
-    },
-    {
         path:"*",
         element: <PageNotFound/>
     },

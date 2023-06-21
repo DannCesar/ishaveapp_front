@@ -31,12 +31,7 @@ export const Client: React.FC = () => {
                   <option value="cpfCliente">CPF</option>
                   <option value="telCliente">Telefone</option>
                 </select>
-                <Button model="alternative">Consultar</Button>
-              </div>
-              <div className="btnContainer">
-                <Button model="main" onClick={() => setModalCad(true)}>
-                  Cadastrar Cliente
-                </Button>
+                <Button model="alternative">Consultar Cliente</Button>
               </div>
             </S.Header>
             <div className="spanContainer">
