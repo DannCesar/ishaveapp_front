@@ -7,20 +7,22 @@ const clientApi = new ClientService();
 export const useRegisterClient = () => {
   const registerClientForm = useFormik({
     initialValues: {
-      cpfCliente: "",
-      nomeCliente: "",
-      dataNascCliente: "",
-      telCliente: "",
-      emailCliente: "",
+      nome: "",
+      sobrenome: "",
+      telefone: "",
+      cpf: "",
+      email: "",
+      dataNasc: "",
     },
     onSubmit: async (values) => {
       try {
         await clientApi.cadClient({
-          cpfCliente: values.cpfCliente,
-          nomeCliente: values.nomeCliente,
-          dataNascCliente: values.dataNascCliente,
-          telCliente: values.telCliente,
-          emailCliente: values.emailCliente,
+          nome: values.nome,
+          sobrenome: values.sobrenome,
+          telefone: values.telefone,
+          cpf: values.cpf,
+          email: values.email,
+          dataNasc: values.dataNasc,
         });
         alert("Realizado cadastro com sucesso!");
       } catch (error) {

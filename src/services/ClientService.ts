@@ -1,30 +1,31 @@
 import { api } from "./api";
 
-interface CadClienteProps{
-    nomeCliente:string;
-	telCliente:string;
-	cpfCliente:string;
-	emailCliente:string;
-	dataNascCliente:string;
+interface CadClienteProps {
+  nome: string;
+  sobrenome: string;
+  telefone: string;
+  cpf: string;
+  email: string;
+  dataNasc: string;
 }
 
-export class ClientService{
-    async cadClient({
-        nomeCliente,
-        telCliente,
-        cpfCliente,
-        emailCliente,
-        dataNascCliente
-    }: CadClienteProps){
-        const {data} = await api.post(`cadastrar-cliente`,{
-            nomeCliente,
-            telCliente,
-            cpfCliente,
-            emailCliente,
-            dataNascCliente
-        })
-        return data
-    }
-
-    
+export class ClientService {
+  async cadClient({
+    nome,
+    sobrenome,
+    telefone,
+    cpf,
+    email,
+    dataNasc,
+  }: CadClienteProps) {
+    const { data } = await api.post(`cadastrar-cliente`, {
+      nome,
+      sobrenome,
+      telefone,
+      cpf,
+      email,
+      dataNasc,
+    });
+    return data;
+  }
 }
