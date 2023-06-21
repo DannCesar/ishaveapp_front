@@ -7,6 +7,7 @@ import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useQuery } from "react-query";
+import { CardClient } from "../../components/CardClient";
 
 export const Scheduling: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
@@ -28,7 +29,7 @@ export const Scheduling: React.FC = () => {
               <span>Pesquisar por :</span>
               <select>
                 <option value="cpfCliente">CPF</option>
-                <option value="telCliente">Telefone</option>
+                <option value="telCliente">Nome</option>
               </select>
               <Button model="alternative">Consultar</Button>
             </div>
@@ -38,6 +39,10 @@ export const Scheduling: React.FC = () => {
               </Button>
             </div>
           </S.Header>
+          <div className="cardContainer">
+
+              <CardClient/>
+          </div>
           <S.Content>
             <div className="schedulingContainer">
               <div className="spanContainer">
@@ -53,7 +58,10 @@ export const Scheduling: React.FC = () => {
               />
             </div>
           </S.Content>
+          <div className="btnAgendar">
+
             <Button type="submit">Agendar</Button>
+          </div>
         </S.Container>
       </Layout>
     </>

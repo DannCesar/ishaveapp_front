@@ -10,7 +10,27 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 16px;
+  
 
+  & .cardContainer{
+    display: flex;
+    width: 30%;
+    height: 30%;
+    margin-top: 100px;
+    justify-content: flex-start;
+    margin-right: 840px;
+  
+  }
+
+
+  & .btnAgendar{
+    display: flex;
+    justify-content: end;
+    width: 76%;
+    margin-top: -90px;
+    
+    
+  }
   @media (max-width:1333px){
     width: 500px;
     margin-top: 130px;
@@ -59,6 +79,9 @@ margin-left: -50px;
 export const Content = styled.div`
 display: flex;
 width: 1250px;
+height: 40%;
+margin-bottom: 40px;
+
 
 
 
@@ -67,9 +90,11 @@ width: 1250px;
   display: flex;
   color: ${({theme}) => theme.colors.black};
   width: 220px;
-  height: 60px;
+  height: 100px;
   margin-top: 12px;
   text-align: center;
+
+  
 }
 
 & .schedulingContainer{
@@ -78,6 +103,7 @@ width: 1250px;
   border-radius: 12px;
   flex-direction: column;
   width: 1200px;
+  height: 200px;
   margin-bottom: 380px;
   margin-left: 980px;
   margin-right: 40px;
