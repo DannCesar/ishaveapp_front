@@ -5,6 +5,7 @@ import { FormRegisterModal } from "../../components/FormRegisterClientModal";
 import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 import { useQuery } from "react-query";
 import { CardClient } from "../../components/CardClient";

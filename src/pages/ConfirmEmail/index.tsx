@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -10,16 +10,29 @@ const confirmEmailApi = new UserService()
 export const ConfirmEmail: React.FC = () => {
     const navigate = useNavigate()
     const location = useLocation()
+    const [message, setMessage] = useState("");
+
     useEffect(() => {
       const reqConfirmEmail = async () => {
         try{
-    
+
           const params = queryString.parse(location.search)
-          await confirmEmailApi.confirmEmail(params.d, params.v)
-           
+          const res = await confirmEmailApi.confirmEmail(params.d, params.v)
+          //Verifica se o usuario está registrado
+          if(res.registered){
+            setMessage('Email confirmado com sucesso!')
+            console.log(res.message)
+          }else{//Verifica se a URL expirou. 
+            if(res.expired){
+              setMessage(res.message)
+            }
+            console.log(res.message)
+          }
+    
         }catch(error){
           console.log(error)
         }
+      
       }
       reqConfirmEmail()
     },[])
@@ -28,7 +41,7 @@ export const ConfirmEmail: React.FC = () => {
       <S.Container>
         <S.ConfirmEmailModal>
           <div className="infoModal">
-            <h3>Email confirmado com sucesso!</h3>
+            <h3>{message}</h3>
           </div>
           <div className="btnContainer">
             <Button model="alternative" onClick={() => navigate('/login')}>Acessar login</Button>
