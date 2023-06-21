@@ -6,20 +6,22 @@ height: 220px;
 background-color: ${({theme}) => theme.colors.ice};
 border-radius: 18px;
 display: flex;
+align-items: center;
 
 
 & .spanContainer{
-    margin-top: 60px;
+   
     display: flex;
     flex-direction: column;
-    margin-left: 100px ;
+    margin-left: 70px ;
+    margin-top: -20px;
 }
 
 `;
 
 export const AvatarContainer = styled.div`
  display: flex;
-  margin-top: 60px;
+  
   margin-left: 40px;
   margin-bottom: 20px;
   width: 100px;

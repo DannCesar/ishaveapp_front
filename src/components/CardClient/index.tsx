@@ -10,11 +10,10 @@ export const CardClient: React.FC = () =>{
           
             <S.AvatarContainer />
             <div className="spanContainer">
-              <span>nomeCliente</span>
-              <span>cpfCliente</span>
-              <span>telCliente</span>
-              <span>emailCliente</span>
-              <span>dataNascCliente</span>
+              <span>Nome:<span>nomeCliente</span></span>
+              <span>CPF:<span>cpfCliente</span></span>
+              <span>Telefone:<span>telCliente</span></span>
+              <span>Email:<span>emailCliente</span></span>
             </div>
           
         </S.Container>
