@@ -34,7 +34,7 @@ export const Scheduling: React.FC = () => {
                 <option value="cpfCliente">CPF</option>
                 <option value="telCliente">Nome</option>
               </select>
-              <Button model="alternative">Consultar</Button>
+              <Button model="alternative">Consultar Cliente</Button>
             </div>
             <div className="btnContainer">
               <Button model="main" onClick={() => setModalCad(true)}>
