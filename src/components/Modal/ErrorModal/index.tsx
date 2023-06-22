@@ -3,13 +3,13 @@ import { Backdrop } from "../styles";
 import * as S from "./styles";
 import { Button } from "../../Button";
 
-interface SuccessModalProps {
+interface ErrorModalProps {
   close(): void;
   title: string;
   label: string;
 }
 
-export const SuccessModal: React.FC<SuccessModalProps> = ({
+export const ErrorModal: React.FC<ErrorModalProps> = ({
   close,
   title,
   label,

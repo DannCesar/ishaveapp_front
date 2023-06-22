@@ -1,10 +1,12 @@
 import React from "react";
-import { TextInput } from "../TextInput";
-import { Button } from "../Button";
-import { useRegisterClient } from "../../hooks/useRegisterClient";
+import { TextInput } from "../../../components/TextInput";
+import { Button } from "../../../components/Button";
+import { useRegisterClient } from "../../../hooks/useRegisterClient";
 import * as S from "./styles";
-import { Backdrop, InfoModal } from "../Modal/styles";
-import { Modal } from "../Modal";
+import { Backdrop, InfoModal } from "../../../components/Modal/styles";
+import { Modal } from "../../../components/Modal";
+import { SuccessModal } from "../../../components/Modal/SuccessModal";
+import { ErrorModal } from "../../../components/Modal/ErrorModal";
 
 interface FormRegisterModalProps {
   close(): void;
@@ -13,7 +15,12 @@ interface FormRegisterModalProps {
 export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
   close,
 }) => {
-  const { registerClientForm } = useRegisterClient();
+  const { registerClientForm,
+    setSuccessModal,
+    successModal,
+    setErrorModal,
+    errorModal,
+   } = useRegisterClient();
   return (
     <>
       <Backdrop onClick={close} />
@@ -44,6 +51,20 @@ export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
               Cadastrar
             </Button>
           </div>
+          {successModal && (
+          <SuccessModal
+            title="Os dados do cliente foram salvos!"
+            label="Realize o agendamento para concluir o cadastro."
+            close={() => setSuccessModal(false)}
+          />
+        )}
+        {errorModal && (
+          <ErrorModal
+            title="Erro na tentativa de cadastro!"
+            label="Tente novamente, se persistir consulte o suporte."
+            close={() => setErrorModal(false)}
+          />
+        )}
       </S.FormContainer>
     </>
   );

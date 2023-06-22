@@ -28,4 +28,9 @@ export class ClientService {
     });
     return data;
   }
+
+  async consultClient([]) {
+    const {data} = await api.get(`consultar-clientes`)
+    return data
+  }
 }

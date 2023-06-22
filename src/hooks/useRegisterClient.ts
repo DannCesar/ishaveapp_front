@@ -1,10 +1,13 @@
 import { useFormik } from "formik";
 import React from "react";
 import { ClientService } from "../services/ClientService";
+import { useState } from "react";
 
 const clientApi = new ClientService();
 
 export const useRegisterClient = () => {
+  const [successModal, setSuccessModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
   const registerClientForm = useFormik({
     initialValues: {
       nome: "",
@@ -24,16 +27,18 @@ export const useRegisterClient = () => {
           email: values.email,
           dataNasc: values.dataNasc,
         });
-        alert("Realizado cadastro com sucesso!");
+        setSuccessModal(true);
       } catch (error) {
         console.log(error);
-        alert(
-          "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"
-        );
+        setErrorModal(true);
       }
     },
   });
   return {
     registerClientForm,
+    setSuccessModal,
+    successModal,
+    setErrorModal,
+    errorModal,
   };
 };

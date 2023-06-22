@@ -2,7 +2,7 @@ import { api } from "./api";
 
 interface RegisterServiceProps{
     nomeServico:string;
-	precoServico:string;
+	precoServico:number;
 	descricaoServico:string;
 	categoriaServico:string;
 }

@@ -2,19 +2,21 @@ import React from "react";
 import * as S from "./styles";
 import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
-
 import { useNavigate } from "react-router-dom";
 import { ListItemScheduling } from "../Scheduling/ListItemScheduling";
 import { UserService } from "../../services/UserService";
+import { useQuery } from "react-query";
 
 const homeApi = new UserService()
 
 export const Home: React.FC = () => {
     const navigate = useNavigate()
-    // const {data: } = useQuery("home",
-    // async () => {
-    //   await 
-    // })
+    const {data: agendamentos } = useQuery("agendamentos",
+    async () => {
+      await homeApi.getHome()
+    })
+    console.log("agen",agendamentos)
+    
   return (
     <>
       <Layout>
@@ -30,7 +32,7 @@ export const Home: React.FC = () => {
             <span>Não há agendamentos para o dia.</span>
           </div>
           <S.Content>
-            <ListItemScheduling />
+            <ListItemScheduling agendamentos={agendamentos} />
           </S.Content>
         </S.Container>
       </Layout>

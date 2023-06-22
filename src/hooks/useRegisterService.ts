@@ -2,14 +2,17 @@ import { useFormik } from "formik";
 import React from "react";
 import { RegisterService } from "../services/RegisterService";
 import { api } from "../services/api";
+import {useState} from "react"
 
 const serviceApi = new RegisterService()
 
 export const useRegisterService = () => {
+const [successModal,setSuccessModal] = useState(false)
+const [errorModal,setErrorModal] = useState(false)
  const registerServiceForm = useFormik({
     initialValues:{
         nomeServico: "",
-        precoServico: "",
+        precoServico: 0,
         descricaoServico: "",
         categoriaServico: "",
 
@@ -21,14 +24,18 @@ export const useRegisterService = () => {
                 descricaoServico: values.descricaoServico,
                 categoriaServico: values.categoriaServico,
             })
-            alert("Serviço cadastrado com sucesso!")
+            setSuccessModal(true)
         }catch(error){
             console.log(error)
-            alert( "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!")
+           setErrorModal(true)
         }
     }
  })
     return{
-        registerServiceForm
+        registerServiceForm,
+        setSuccessModal,
+        successModal,
+        setErrorModal,
+        errorModal
     }
 }

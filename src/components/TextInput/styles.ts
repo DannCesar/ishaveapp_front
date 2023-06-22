@@ -26,5 +26,13 @@ display: flex;
       background-color: ${({ theme }) => theme.colors.ice};
       padding: 2px 8px;
       align-items: center;
-    }}
+    }
+    
+    & .tooltipError{
+      width: 80%;
+      height: 20px;
+      color: red;
+    }
+    
+    }
 `

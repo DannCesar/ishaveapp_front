@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./styles";
 import { Layout } from "../../components/Layout";
-import { FormRegisterModal } from "../../components/FormRegisterClientModal";
+import { FormRegisterModal } from "./FormRegisterClientModal";
 import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
@@ -13,7 +13,7 @@ import { SuccessModal } from "../../components/Modal/SuccessModal";
 
 export const Scheduling: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
-  const [successModal,setSuccessModal] = useState(false)
+  const [successModal, setSuccessModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
   // const {data: agendamento } = useQuery("agendamento",
   //   async () => {
@@ -23,7 +23,13 @@ export const Scheduling: React.FC = () => {
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}
-      {successModal && <SuccessModal title="Realizado agendamento com sucesso!" label="Atente-se a data e horário escolhido para o agendamento."close={() => setSuccessModal(false)}/>}
+      {successModal && (
+        <SuccessModal
+          title="Realizado agendamento com sucesso!"
+          label="Atente-se a data e horário escolhido para o agendamento."
+          close={() => setSuccessModal(false)}
+        />
+      )}
 
       <Layout>
         <S.Container>
@@ -44,8 +50,7 @@ export const Scheduling: React.FC = () => {
             </div>
           </S.Header>
           <div className="cardContainer">
-
-              <CardClient/>
+            <CardClient />
           </div>
           <S.Content>
             <div className="schedulingContainer">
@@ -63,8 +68,9 @@ export const Scheduling: React.FC = () => {
             </div>
           </S.Content>
           <div className="btnAgendar">
-
-            <Button type="submit" onClick={() => setSuccessModal(true)}>Agendar</Button>
+            <Button type="submit" onClick={() => setSuccessModal(true)}>
+              Agendar
+            </Button>
           </div>
         </S.Container>
       </Layout>

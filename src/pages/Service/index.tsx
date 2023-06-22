@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import * as S from "./styles";
 import { Layout } from "../../components/Layout";
-import { FormRegisterModal } from "../../components/FormRegisterClientModal";
+import { FormRegisterModal } from "../Scheduling/FormRegisterClientModal";
 import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
-import { RegisterServiceModal } from "../../components/RegisterServiceModal";
+import { RegisterServiceModal } from "./RegisterServiceModal";
 import { ListItemService } from "./ListItemService";
 import { useQuery } from "react-query";
 import { RegisterService } from "../../services/RegisterService";
@@ -24,12 +24,10 @@ export const Service: React.FC = () => {
         <S.Container>
           <S.Header>
             <div className="searchContainer">
+              
               <SearchInput></SearchInput>
-              <span>Pesquisar por :</span>
-              <select>
-                <option value="nomeServico">Serviço</option>
-                <option value="categoriaServico">Categoria</option>
-              </select>
+              <span>Pesquisar por nome de Serviço</span>
+             
               <Button model="alternative">Consultar</Button>
             </div>
             <div className="btnContainer">

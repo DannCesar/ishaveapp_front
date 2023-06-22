@@ -78,7 +78,7 @@ export class UserService {
     return data
   }
   async getHome(){
-    const {data} = await api.get(`home`)
+    const {data} = await api.get(`/home`)
     return data
   }
 }

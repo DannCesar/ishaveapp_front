@@ -42,7 +42,7 @@ export const SignUp: React.FC = () => {
               name="nomeEmpresa"
               form={formSignUp}
             />
-            <TextInput label="CNPJ" name="cnpjEmpresa" form={formSignUp} />
+            <TextInput label="CNPJ" name="cnpjEmpresa" form={formSignUp}  required/>
             <TextInput label="Telefone" name="telEmpresa" form={formSignUp} />
             <TextInput label="Email" name="emailUsuario" form={formSignUp} />
             <TextInput label="CEP" name="cep" form={formSignUp} />
