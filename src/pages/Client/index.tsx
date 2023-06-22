@@ -12,10 +12,16 @@ const clientApi = new ClientService();
 
 export const Client: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
-  const { data: cliente } = useQuery("cliente", async () => {
-    return await clientApi.consultClient([]);
-  });
-  console.log("cliente", cliente);
+  const { data: cliente } = useQuery(
+    "cliente",
+    async () => {
+      return await clientApi.consultClient([]);
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}
@@ -36,7 +42,7 @@ export const Client: React.FC = () => {
           <div className="spanContainer">
             <span>Não há cliente cadastrado.</span>
           </div>
-          <S.Content>{/* <ListItemClient cliente={cliente}/> */}</S.Content>
+          <S.Content>{/* <ListItemClient cliente={cliente} /> */}</S.Content>
         </S.Container>
       </Layout>
     </>

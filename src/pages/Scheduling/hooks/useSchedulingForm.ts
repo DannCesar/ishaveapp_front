@@ -6,6 +6,7 @@ export const useSchedulingForm = () => {
         horario:"",
         data:"",
         idCliente: "",
+        idServices:""
     },
     onSubmit: async (values) => {
       try {

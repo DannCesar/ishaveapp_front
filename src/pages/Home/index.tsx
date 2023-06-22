@@ -7,23 +7,28 @@ import { ListItemScheduling } from "../Scheduling/ListItemScheduling";
 import { UserService } from "../../services/UserService";
 import { useQuery } from "react-query";
 
-const homeApi = new UserService()
+const homeApi = new UserService();
 
 export const Home: React.FC = () => {
-    const navigate = useNavigate()
-    const {data: agendamentos } = useQuery("agendamentos",
+  const navigate = useNavigate();
+  const { data: agendamentos } = useQuery(
+    "agendamentos",
     async () => {
-      await homeApi.getHome()
-    })
-    console.log("agen",agendamentos)
-    
+      await homeApi.getHome();
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+  console.log("agen", agendamentos);
+
   return (
     <>
       <Layout>
         <S.Container>
           <S.Header>
             <div className="btnContainer">
-              <Button model="main" onClick={() =>navigate("/agendamento")}>
+              <Button model="main" onClick={() => navigate("/agendamento")}>
                 Realizar Agendamento
               </Button>
             </div>
