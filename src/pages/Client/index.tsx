@@ -4,23 +4,14 @@ import * as S from "./styles";
 import { Button } from "../../components/Button";
 import { FormRegisterModal } from "../Scheduling/FormRegisterClientModal";
 import { SearchInput } from "../../components/SearchInput";
-import { ListItemClient } from "./ListItemClient";
 import { ClientService } from "../../services/ClientService";
 import { useQuery } from "react-query";
 
-const clientApi = new ClientService();
+
 
 export const Client: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
-  const { data: cliente } = useQuery(
-    "cliente",
-    async () => {
-      return await clientApi.consultClient([]);
-    },
-    {
-      refetchOnWindowFocus: false,
-    }
-  );
+ 
 
   return (
     <>
@@ -42,7 +33,9 @@ export const Client: React.FC = () => {
           <div className="spanContainer">
             <span>Não há cliente cadastrado.</span>
           </div>
-          <S.Content>{/* <ListItemClient cliente={cliente} /> */}</S.Content>
+          <S.Content>
+            {/* <ListItemClient cliente={data} /> */}
+            </S.Content>
         </S.Container>
       </Layout>
     </>

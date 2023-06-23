@@ -23,11 +23,11 @@ export const Container = styled.div`
   }
 
 
-  & .btnAgendar{
+  & .btnContainer{
     display: flex;
-    justify-content: end;
-    width: 76%;
-    margin-top: -90px;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 50px;
     
     
   }
@@ -83,32 +83,6 @@ height: 40%;
 margin-bottom: 40px;
 
 
-
-
-
-& .spanContainer{
-  display: flex;
-  color: ${({theme}) => theme.colors.black};
-  width: 220px;
-  height: 100px;
-  margin-top: 12px;
-  text-align: center;
-  margin-top: 30px;
-
-  
-}
-
-& .schedulingContainer{
-  display: flex;
-  background-color: ${({theme}) => theme.colors.ice};
-  border-radius: 12px;
-  flex-direction: column;
-  width: 1200px;
-  height: 200px;
-  margin-bottom: 380px;
-  margin-left: 980px;
-  margin-right: 40px;
-}
 
 @media (max-width:1333px){
   & .schedulingContainer{

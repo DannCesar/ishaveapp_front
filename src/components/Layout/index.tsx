@@ -50,10 +50,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
           Inicio
         </div>
         <div className="navigation">
-          <UserIcon onClick={() => navigate("/clientes")} />
-          Clientes
-        </div>
-        <div className="navigation">
           <SccisorsIcon onClick={() => navigate("/servicos")} />
           Serviços
         </div>

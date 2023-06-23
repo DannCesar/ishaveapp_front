@@ -1,9 +1,11 @@
 import { useFormik } from "formik";
+import { useState } from "react";
 
 export const useSchedulingForm = () => {
+  const [successModal, setSuccessModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
   const schedulingForm = useFormik({
     initialValues: {
-        horario:"",
         data:"",
         idCliente: "",
         idServices:""
@@ -11,16 +13,18 @@ export const useSchedulingForm = () => {
     onSubmit: async (values) => {
       try {
        
-        alert("Realizado agendamento com sucesso!");
+        setSuccessModal(true)
       } catch (error) {
         console.log(error);
-        alert(
-          "Erro ao realizar agendamento, tente novamente mais tarde,se persistir entre em contato com o suporte!"
-        );
+       setErrorModal(true)
       }
     },
   });
   return {
     schedulingForm,
+    setSuccessModal,
+    successModal,
+    setErrorModal,
+    errorModal,
   };
 };

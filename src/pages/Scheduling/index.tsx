@@ -5,16 +5,41 @@ import { FormRegisterModal } from "./FormRegisterClientModal";
 import { Button } from "../../components/Button";
 import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import { useQuery } from "react-query";
 import { CardClient } from "../../components/CardClient";
 import { SuccessModal } from "../../components/Modal/SuccessModal";
+import { ClientService } from "../../services/ClientService";
+
+
+const clientApi = new ClientService();
+
+interface ClientProps {
+  cliente: {
+    idCliente: number;
+    nomeCliente: string;
+    telCliente: string;
+    cpfCliente: string;
+    emailCliente: string;
+    dataNascCliente: string;
+  };
+}
 
 export const Scheduling: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
-  const [selectedDate, setSelectedDate] = useState("");
+  const [schedulingModal,setSchedulingModal] = useState(false)
+ 
+  const { data  } = useQuery(
+    "cliente",
+    async () => {
+      return await clientApi.consultClient([]);
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+  console.log(data)
   // const {data: agendamento } = useQuery("agendamento",
   //   async () => {
 
@@ -28,6 +53,13 @@ export const Scheduling: React.FC = () => {
           title="Realizado agendamento com sucesso!"
           label="Atente-se a data e horário escolhido para o agendamento."
           close={() => setSuccessModal(false)}
+        />
+      )}
+      {schedulingModal && (
+        <FormSchedulingModal
+          title="Realizado agendamento com sucesso!"
+          label="Atente-se a data e horário escolhido para o agendamento."
+          close={() => setSchedulingModal(false)}
         />
       )}
 
@@ -47,31 +79,17 @@ export const Scheduling: React.FC = () => {
               <Button model="main" onClick={() => setModalCad(true)}>
                 Cadastrar Cliente
               </Button>
+            <Button type="submit" onClick={() => setSchedulingModal(true)}>
+              Agendar
+            </Button>
             </div>
           </S.Header>
           <div className="cardContainer">
             <CardClient />
           </div>
           <S.Content>
-            <div className="schedulingContainer">
-              <div className="spanContainer">
-                <span>Selecione a data e horário do seu agendamento:</span>
-              </div>
-              <DatePicker
-                className="datePicker"
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                dateFormat="dd/MM/yyyy"
-                showTimeSelect
-                placeholderText="Escolha a data e horário..."
-              />
-            </div>
+           
           </S.Content>
-          <div className="btnAgendar">
-            <Button type="submit" onClick={() => setSuccessModal(true)}>
-              Agendar
-            </Button>
-          </div>
         </S.Container>
       </Layout>
     </>

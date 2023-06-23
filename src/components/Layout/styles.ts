@@ -33,6 +33,7 @@ export const NavigationLayout = styled.header`
     position: relative;
     align-items: center;
     cursor: pointer;
+    margin-left: 60px;
   }
 
 
