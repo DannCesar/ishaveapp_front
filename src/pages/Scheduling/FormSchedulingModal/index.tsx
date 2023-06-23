@@ -1,43 +1,65 @@
-import React from "react";
-import { TextInput } from "../../../components/TextInput";
+import React, { useState } from "react";
 import { Button } from "../../../components/Button";
 import { useRegisterClient } from "../../../hooks/useRegisterClient";
 import * as S from "./styles";
-import { Backdrop, InfoModal } from "../../../components/Modal/styles";
-import { Modal } from "../../../components/Modal";
+import { Backdrop } from "../../../components/Modal/styles";
 import { SuccessModal } from "../../../components/Modal/SuccessModal";
 import { ErrorModal } from "../../../components/Modal/ErrorModal";
+import DatePicker from "react-datepicker";
 
-interface FormRegisterModalProps {
+interface FormSchedulingModalProps {
   close(): void;
 }
 
-export const FormSchedulingModal: React.FC<FormRegisterModalProps> = ({
+export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
   close,
 }) => {
-  const { registerClientForm,
+  const {
+    registerClientForm,
     setSuccessModal,
     successModal,
     setErrorModal,
     errorModal,
-   } = useRegisterClient();
+  } = useRegisterClient();
+  const [selectedDate, setSelectedDate] = useState("");
   return (
     <>
       <Backdrop onClick={close} />
 
       <S.FormContainer onSubmit={registerClientForm.handleSubmit}>
         <h4>Agendamento</h4>
-        <div className="formClient">
-        </div>
-          <div className="btnContainer">
-            <Button  model="alternative" onClick={close} >
-              Cancelar
-            </Button>
-            <Button  className="btnCad" model="alternative"  type="submit" disabled={!registerClientForm.dirty} >
-              Cadastrar
-            </Button>
+          <div className="spanContainer">
+            <span>Selecione a data,horário e serviço desejado!</span>
           </div>
-          {successModal && (
+        <div className="formClient">
+          <div>
+            <select name="" id="" form={registerClientForm}>
+              <option value="" >Corte</option>
+            </select>
+          </div>
+          <DatePicker
+            className="inputDate"
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            showTimeSelect
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Selecione a data e horario"
+          />
+        </div>
+        <div className="btnContainer">
+          <Button model="alternative" onClick={close}>
+            Cancelar
+          </Button>
+          <Button
+            className="btnCad"
+            model="alternative"
+            type="submit"
+            disabled={!registerClientForm.dirty}
+          >
+            Cadastrar
+          </Button>
+        </div>
+        {successModal && (
           <SuccessModal
             title="Os dados do cliente foram salvos!"
             label="Realize o agendamento para concluir o cadastro."

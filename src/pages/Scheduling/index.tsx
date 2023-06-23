@@ -10,6 +10,7 @@ import { useQuery } from "react-query";
 import { CardClient } from "../../components/CardClient";
 import { SuccessModal } from "../../components/Modal/SuccessModal";
 import { ClientService } from "../../services/ClientService";
+import { FormSchedulingModal } from "./FormSchedulingModal";
 
 
 const clientApi = new ClientService();

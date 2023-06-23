@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const FormContainer = styled.form`
   display: flex;
   position: fixed;
-  max-width: 40%;
-  max-height: 55%;
+  max-width: 30%;
+  max-height: 40%;
   top: 0;
   left: 0;
   right: 0;
@@ -16,24 +16,22 @@ export const FormContainer = styled.form`
   color: ${({ theme }) => theme.colors.black};
   border-radius: ${({ theme }) => theme.borderRadius.modal};
 
-  & .spanContainer{
-  display: flex;
-  color: ${({theme}) => theme.colors.black};
-  margin-top: 12px;
-  text-align: center;
-  justify-content: center;
+  & .inputDate {
+    display: flex;
+    border-radius: 8px;
+    padding: 6px 8px;
+    border: none;
+    margin-top: 20px;
+  }
 
-  
-}
+  & .spanContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-weight: 400;
+  }
 
-& .schedulingContainer{
-  display: flex;
-  border-radius: 12px;
-  flex-direction: column;
-  
-}
-
-  @media (max-width:1333px){
+  @media (max-width: 1333px) {
     max-width: 50%;
     max-height: 70%;
   }
@@ -45,10 +43,20 @@ export const FormContainer = styled.form`
   }
 
   & .formClient {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    gap: 12px;
+
+    select {
+      display: flex;
+      margin-top: 20px;
+      padding: 4px 8px;
+      width: 170px;
+      border-radius: 8px;
+      background-color: ${({ theme }) => theme.colors.ice};
+    }
 
     label {
       color: ${({ theme }) => theme.colors.black};
@@ -64,13 +72,12 @@ export const FormContainer = styled.form`
   & .btnContainer {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 60px;
     gap: 28px;
 
     button {
       color: #fff;
       border-color: ${({ theme }) => theme.colors.brown};
     }
-
   }
 `;
