@@ -11,11 +11,15 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 16px;
 
-  @media (max-width: 1333px) {
-    width: 500px;
-    margin-top: 130px;
-    margin-left: 400px;
-    height: 400px;
+  & .serviceContainer{
+    margin-top: 50px;
+    display: grid;
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: -422px;
+    span{
+      color: #fff;
+    }
   }
 
   & .spanContainer {
@@ -35,11 +39,7 @@ export const Header = styled.div`
   margin-top: -600px;
   margin-left: -50px;
 
-  @media (max-width: 1333px) {
-    width: 1050px;
-    margin-left: -220px;
-    margin-top: -580px;
-  }
+
   & .searchContainer {
     display: flex;
     align-items: center;
@@ -58,5 +58,10 @@ export const Header = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  width: 1220px;
+  flex-direction: column;
+  width: 900px;
+  height: 500px;
+  margin-top: 10px;
+  margin-left: -350px;
+  overflow-y: scroll;
 `;

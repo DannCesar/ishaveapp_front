@@ -13,9 +13,10 @@ const serviceApi = new RegisterService();
 
 export const Service: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
-  // const { data: servico } = useQuery("servico", async () => {
-  //   return await serviceApi.getService();
-  // });
+  const { data } = useQuery("servico", async () => {
+    return await serviceApi.getService();
+  });
+  console.log(data);
   return (
     <>
       {modalCad && <RegisterServiceModal close={() => setModalCad(false)} />}
@@ -24,10 +25,9 @@ export const Service: React.FC = () => {
         <S.Container>
           <S.Header>
             <div className="searchContainer">
-              
               <SearchInput></SearchInput>
               <span>Pesquisar por nome de Serviço</span>
-             
+
               <Button model="alternative">Consultar</Button>
             </div>
             <div className="btnContainer">
@@ -36,11 +36,22 @@ export const Service: React.FC = () => {
               </Button>
             </div>
           </S.Header>
-          <div className="spanContainer">
-            <span>Não há serviço cadastrado.</span>
+         
+          <div className="serviceContainer">
+            <span>Serviço</span>
+            <span>Preço</span>
+            <span>Categoria</span>
+            <span>Descrição</span>
           </div>
-          <S.Content></S.Content>
-          <ListItemService />
+          <S.Content>
+            {data?.map((servico: any) =>
+              servico == "" ? (
+                "Não há serviço cadastrado."
+              ) : (
+                <ListItemService key={servico.id} servico={servico} />
+              )
+            )}
+          </S.Content>
         </S.Container>
       </Layout>
     </>
