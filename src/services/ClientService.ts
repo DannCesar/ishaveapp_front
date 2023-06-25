@@ -29,7 +29,7 @@ export class ClientService {
     return data;
   }
 
-  async consultClient([]) {
+  async consultClient() {
     const {data} = await api.get(`consultar-clientes`)
     return data
   }
