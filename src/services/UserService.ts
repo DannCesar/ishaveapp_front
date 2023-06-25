@@ -1,4 +1,6 @@
 import { api } from "./api";
+const id = localStorage.getItem("ishaveappId")
+api.defaults.headers.common['X-Session-ID'] = id
 
 //Tipagem das propriedade do usuário
 
@@ -60,6 +62,7 @@ export class UserService {
     return data;
   }
 
+  
   async loginUser({ emailUsuario, senhaUsuario }: LoginUserProps) {
     const { data } = await api.post(`/sign-in/`, {
       emailUsuario,
@@ -79,8 +82,8 @@ export class UserService {
     return data
   }
   async getHome(){
-    const id = localStorage.getItem("ishaveappId")
-    const {data} = await api.get(`/home?id=${id}`)
+    
+    const {data} = await api.get(`/home`)
     return data
   }
 }
