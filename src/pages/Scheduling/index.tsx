@@ -7,11 +7,10 @@ import { SearchInput } from "../../components/SearchInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useQuery } from "react-query";
-import { CardClient } from "../../components/CardClient";
+import { CardClient } from "./CardClient";
 import { SuccessModal } from "../../components/Modal/SuccessModal";
 import { ClientService } from "../../services/ClientService";
 import { FormSchedulingModal } from "./FormSchedulingModal";
-
 
 const clientApi = new ClientService();
 
@@ -26,21 +25,19 @@ interface ClientProps {
   };
 }
 
-export const Scheduling: React.FC = () => {
+export const Scheduling: React.FC<ClientProps> = () => {
   const [modalCad, setModalCad] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
-  const [schedulingModal,setSchedulingModal] = useState(false)
- 
-  const { data  } = useQuery(
-    "cliente",
-    async () => {
-      return await clientApi.consultClient([]);
+  const [schedulingModal, setSchedulingModal] = useState(false);
+
+  const { data } = useQuery( "cliente",async () => {
+      return await clientApi.consultClient();
     },
     {
       refetchOnWindowFocus: false,
     }
   );
-  console.log(data)
+  console.log(data);
   // const {data: agendamento } = useQuery("agendamento",
   //   async () => {
 
@@ -80,16 +77,22 @@ export const Scheduling: React.FC = () => {
               <Button model="main" onClick={() => setModalCad(true)}>
                 Cadastrar Cliente
               </Button>
-            <Button type="submit" onClick={() => setSchedulingModal(true)}>
-              Agendar
-            </Button>
+              <Button type="submit" onClick={() => setSchedulingModal(true)}>
+                Agendar
+              </Button>
             </div>
           </S.Header>
-          <div className="cardContainer">
-            <CardClient />
-          </div>
           <S.Content>
-           
+          <div className="cardContainer">
+          {data?.map((cliente: any) =>
+              cliente == "" ? (
+                "Não há cliente cadastrado."
+              ) : (
+                <CardClient key={cliente.id} cliente={cliente} />
+              )
+            )}
+          </div>
+            
           </S.Content>
         </S.Container>
       </Layout>
