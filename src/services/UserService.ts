@@ -1,6 +1,5 @@
 import { api } from "./api";
-const id = localStorage.getItem("ishaveappId")
-api.defaults.headers.common['X-Session-ID'] = id
+
 
 //Tipagem das propriedade do usuário
 
@@ -76,9 +75,8 @@ export class UserService {
     return data
   }
 
-  async signOut(idSession:any){
-    const id = localStorage.getItem("ishaveappId")
-    const {data} = await api.delete(`/logout?id=${id}`)
+  async signOut(){
+    const {data} = await api.delete(`/logout`)
     return data
   }
   async getHome(){
