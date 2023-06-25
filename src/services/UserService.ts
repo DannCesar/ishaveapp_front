@@ -77,8 +77,8 @@ export class UserService {
     const {data} = await api.delete(`/logout`)
     return data
   }
-  async getHome(){
-    const {data} = await api.get(`/home`)
+  async getHome(id:string){
+    const {data} = await api.get(`/home?d=${id}`)
     return data
   }
 }

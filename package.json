@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "1.0.6",
+    "@radix-ui/react-tooltip": "^1.0.6",
     "axios": "^1.4.0",
     "cpf-cnpj-validator": "^1.0.3",
     "formik": "^2.4.1",

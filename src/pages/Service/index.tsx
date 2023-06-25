@@ -13,10 +13,15 @@ const serviceApi = new RegisterService();
 
 export const Service: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
+  const [filter,setFilter] =useState("")
   const { data } = useQuery("servico", async () => {
     return await serviceApi.getService();
   });
   console.log(data);
+
+  // const filterService = data.filter((servico:any) =>{
+
+  // )}
   return (
     <>
       {modalCad && <RegisterServiceModal close={() => setModalCad(false)} />}

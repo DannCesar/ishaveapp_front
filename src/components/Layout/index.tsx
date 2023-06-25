@@ -7,17 +7,37 @@ import { ScheduleIcon } from "../../assets/Icons/ScheduleIcon/ScheduleIcon";
 import { SignOutIcon } from "../../assets/Icons/SignOutIcon/SignOutIcon";
 import { useNavigate } from "react-router-dom";
 import { UserService } from "../../services/UserService";
+import { useQuery } from "react-query";
 
 const userApi = new UserService();
 
 interface LayoutProps {
   children: React.ReactNode;
+  usuario: {
+    nomeUsuario: string;
+    empresa: {
+      idEmpresa: number;
+      cnpjEmpresa: string;
+      nomeEmpresa: string;
+      telEmpresa: string;
+      enderecoId: number;
+      fotoEmpresa: string;
+    };
+  };
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
+export const Layout: React.FC<LayoutProps> = ({
+  usuario,
+  children,
+  ...props
+}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
-
+  //   const {nomeUsuario,empresa} = usuario
+  //   const {data} = useQuery("usuario", async() =>{
+  //     return  await userApi.getHome()
+  //   })
+  // console.log("user",data)
   useEffect(
     () => {
       //Obtendo Valor do localStorage
@@ -39,8 +59,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
   };
 
   const changeScreen = () => {
-    navigate("/")
-  }
+    navigate("/");
+  };
   return (
     <S.Container>
       <S.NavigationLayout>
@@ -60,9 +80,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
       </S.NavigationLayout>
       <S.Sidebar>
         <S.AvatarContainer />
-        <div className="nameUserContainer">
-          <h3>Nome do usuário</h3>
-        </div>
+        <div className="nameUserContainer">{/* <h3>{nomeUsuario}</h3> */}</div>
         <div className="signOutContainer">
           <SignOutIcon onClick={() => signOut()} />
         </div>

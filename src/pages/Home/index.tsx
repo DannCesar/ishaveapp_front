@@ -7,42 +7,47 @@ import { ListItemScheduling } from "./ListItemScheduling";
 import { UserService } from "../../services/UserService";
 import { useQuery } from "react-query";
 
-const homeApi = new UserService();
+const userApi = new UserService();
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
-  const { data,isLoading } = useQuery(
-    "agendamentos",
-    async () => {
-      console.log("oi")
-      return await homeApi.getHome();
+  const { data } = useQuery("usuario", async () => {
+    return await userApi.getHome();
+  });
+  //   const { data,isLoading } = useQuery(
+  //     "agendamentos",
+  //     async () => {
+  //       console.log("oi")
+  //       return await homeApi.getHome();
 
-    },
-    {
-      refetchOnWindowFocus: false,
-    }
-  );
-  console.log("agen", data);
-console.log(isLoading)
+  //     },
+  //     {
+  //       refetchOnWindowFocus: false,
+  //     }
+  //   );
+  //   console.log("agen", data);
+  // console.log(isLoading)
   return (
     <>
-      <Layout>
-        <S.Container>
-          <S.Header>
-            <div className="btnContainer">
-              <Button model="main" onClick={() => navigate("/agendamento")}>
-                Realizar Agendamento
-              </Button>
+      {/* {data?.map((usuario: any) => (
+      ))} */}
+        <Layout >
+          <S.Container>
+            <S.Header>
+              <div className="btnContainer">
+                <Button model="main" onClick={() => navigate("/agendamento")}>
+                  Realizar Agendamento
+                </Button>
+              </div>
+            </S.Header>
+            <div className="spanContainer">
+              <span>Não há agendamentos para o dia.</span>
             </div>
-          </S.Header>
-          <div className="spanContainer">
-            <span>Não há agendamentos para o dia.</span>
-          </div>
-          <S.Content>
-            <ListItemScheduling agendamentos={data} />
-          </S.Content>
-        </S.Container>
-      </Layout>
+            <S.Content>
+              <ListItemScheduling agendamentos={data} />
+            </S.Content>
+          </S.Container>
+        </Layout>
     </>
   );
 };
