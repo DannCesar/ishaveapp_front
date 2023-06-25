@@ -74,11 +74,13 @@ export class UserService {
   }
 
   async signOut(idSession:any){
-    const {data} = await api.delete(`/logout`)
+    const id = localStorage.getItem("ishaveappId")
+    const {data} = await api.delete(`/logout?id=${id}`)
     return data
   }
   async getHome(){
-    const {data} = await api.get(`/home`)
+    const id = localStorage.getItem("ishaveappId")
+    const {data} = await api.get(`/home?id=${id}`)
     return data
   }
 }

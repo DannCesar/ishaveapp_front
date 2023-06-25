@@ -14,7 +14,8 @@ export class RegisterService{
         descricaoServico,
         categoriaServico
     }: RegisterServiceProps){
-        const {data} = await api.post(`cadastrar-servico`,{
+        const id = localStorage.getItem("ishaveappId")
+        const {data} = await api.post(`cadastrar-servico?id=${id}`,{
             nomeServico,
             precoServico,
             descricaoServico,
@@ -24,7 +25,8 @@ export class RegisterService{
     }
 
     async getService(){
-        const {data} = await api.get(`consultar-servicos`)
+        const id = localStorage.getItem("ishaveappId")
+        const {data} = await api.get(`consultar-servicos?id=${id}`)
         return data
     }
 }
