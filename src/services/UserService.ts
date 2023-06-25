@@ -1,4 +1,6 @@
 import { api } from "./api";
+const id = localStorage.getItem("ishaveappId")
+api.defaults.headers.common['X-Session-ID'] = id
 
 //Tipagem das propriedade do usuário
 
@@ -60,6 +62,7 @@ export class UserService {
     return data;
   }
 
+  
   async loginUser({ emailUsuario, senhaUsuario }: LoginUserProps) {
     const { data } = await api.post(`/sign-in/`, {
       emailUsuario,
@@ -74,11 +77,13 @@ export class UserService {
   }
 
   async signOut(idSession:any){
-    const {data} = await api.delete(`/logout`)
+    const id = localStorage.getItem("ishaveappId")
+    const {data} = await api.delete(`/logout?id=${id}`)
     return data
   }
-  async getHome(id:string){
-    const {data} = await api.get(`/home?d=${id}`)
+  async getHome(){
+    
+    const {data} = await api.get(`/home`)
     return data
   }
 }
