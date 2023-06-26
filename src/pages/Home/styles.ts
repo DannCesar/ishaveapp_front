@@ -11,6 +11,17 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 16px;
 
+  & .serviceContainer{
+    margin-top: 50px;
+    display: grid;
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: -422px;
+    span{
+      color: #fff;
+    }
+  }
+
   @media (max-width: 1333px){
     margin-top: 90px;
     height: 400px;
@@ -70,7 +81,11 @@ margin-left: -50px;
 `;
 
 export const Content = styled.div`
-display: flex;
-width: 1168px;
-
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  height: 500px;
+  margin-top: 10px;
+  margin-left: -350px;
+  overflow-y: scroll;
 `;

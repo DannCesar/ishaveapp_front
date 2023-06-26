@@ -19,9 +19,11 @@ export const Service: React.FC = () => {
   });
   // console.log(data);
 
-  // const filterService = data.filter((servico:any) =>{
+  const filterService = (servico:any) => {
+   
+  }
 
-  // )}
+
   return (
     <>
       {modalCad && <RegisterServiceModal close={() => setModalCad(false)} />}
@@ -33,7 +35,7 @@ export const Service: React.FC = () => {
               <SearchInput></SearchInput>
               <span>Pesquisar por nome de Serviço</span>
 
-              <Button model="alternative">Consultar</Button>
+              <Button model="alternative" >Consultar</Button>
             </div>
             <div className="btnContainer">
               <Button model="main" onClick={() => setModalCad(true)}>

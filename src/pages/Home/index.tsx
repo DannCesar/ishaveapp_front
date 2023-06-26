@@ -41,9 +41,12 @@ export const Home: React.FC = () => {
                 </Button>
               </div>
             </S.Header>
-            <div className="spanContainer">
-              {/* <span>Não há agendamentos para o dia.</span> */}
-            </div>
+            <div className="serviceContainer">
+            <span>Cliente</span>
+            <span>Data</span>
+            <span>Horário</span>
+            <span>Preço</span>
+          </div>
             <S.Content>
               {
                 agendamento?.agendamentos?.map((agendamentos:any) => agendamentos.agendamentos == "" ? "Não há agendamentos cadastrado" : (

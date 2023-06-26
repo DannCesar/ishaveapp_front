@@ -44,9 +44,7 @@ export const Scheduling: React.FC<ClientProps> = () => {
   //   }
   //   )
 
-  const handleDeleteClient = () => {
-
-  }
+ 
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}

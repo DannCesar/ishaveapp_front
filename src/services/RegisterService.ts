@@ -29,4 +29,9 @@ export class RegisterService{
         const {data} = await api.get(`consultar-servicos`)
         return data
     }
+
+    async filterService(nomeServico:string){
+        const {data} = await api.get(`consultar-servicos?${nomeServico}`)
+        return data
+    }
 }
