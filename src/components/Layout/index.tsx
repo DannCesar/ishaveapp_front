@@ -8,6 +8,8 @@ import { SignOutIcon } from "../../assets/Icons/SignOutIcon/SignOutIcon";
 import { useNavigate } from "react-router-dom";
 import { UserService } from "../../services/UserService";
 import { useQuery } from "react-query";
+import profile from "../../assets/defaultPerfil.png"
+
 
 const userApi = new UserService();
 
@@ -33,11 +35,10 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
-  //   const {nomeUsuario,empresa} = usuario
-  //   const {data} = useQuery("usuario", async() =>{
-  //     return  await userApi.getHome()
-  //   })
-  // console.log("user",data)
+    const {data} = useQuery("usuario", async() =>{
+      return  await userApi.getHome()
+    })
+
   useEffect(
     () => {
       //Obtendo Valor do localStorage
@@ -79,8 +80,9 @@ export const Layout: React.FC<LayoutProps> = ({
         </div>
       </S.NavigationLayout>
       <S.Sidebar>
-        <S.AvatarContainer />
-        <div className="nameUserContainer">{/* <h3>{nomeUsuario}</h3> */}</div>
+        <S.AvatarContainer fotoEmpresa={data?.usuario?.empresa?.fotoEmpresa}/>
+        <img src={profile} alt="avatar" />
+        <div className="nameUserContainer"><h3>{data?.usuario?.nomeUsuario}</h3></div>
         <div className="signOutContainer">
           <SignOutIcon onClick={() => signOut()} />
         </div>

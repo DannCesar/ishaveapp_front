@@ -6,7 +6,6 @@ interface CadClienteProps {
   telefone: string;
   cpf: string;
   email: string;
-  dataNasc: string;
 }
 
 export class ClientService {
@@ -16,7 +15,6 @@ export class ClientService {
     telefone,
     cpf,
     email,
-    dataNasc,
   }: CadClienteProps) {
     const { data } = await api.post(`cadastrar-cliente`, {
       nome,
@@ -24,7 +22,6 @@ export class ClientService {
       telefone,
       cpf,
       email,
-      dataNasc,
     });
     return data;
   }

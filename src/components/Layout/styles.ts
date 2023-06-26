@@ -1,4 +1,7 @@
 import styled from "styled-components";
+interface AvatarProfileProps{
+  fotoEmpresa: string;
+}
 
 export const Container = styled.div`
   width: 100vw;
@@ -49,6 +52,10 @@ export const Sidebar = styled.div`
   align-items: center;
   /* background-color: aliceblue; */
 
+  img {
+    width: 60px;
+  }
+
   & .nameUserContainer {
     display: flex;
     justify-content: center;
@@ -93,15 +100,17 @@ export const Sidebar = styled.div`
     }
   }
 `;
-export const AvatarContainer = styled.div`
+export const AvatarContainer = styled.div<AvatarProfileProps>`
   display: flex;
-  margin-top: 60px;
+  /* margin-top: 60px; */
   margin-left: 40px;
   margin-bottom: 20px;
   width: 100px;
   height: 100px;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({fotoEmpresa}) => `url(${fotoEmpresa})`};
   border-radius: 30%;
+
+
   
 
   @media(max-width:1690px){

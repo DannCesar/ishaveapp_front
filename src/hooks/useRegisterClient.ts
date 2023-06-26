@@ -15,7 +15,6 @@ export const useRegisterClient = () => {
       telefone: "",
       cpf: "",
       email: "",
-      dataNasc: "",
     },
     onSubmit: async (values) => {
       try {
@@ -25,7 +24,6 @@ export const useRegisterClient = () => {
           telefone: values.telefone,
           cpf: values.cpf,
           email: values.email,
-          dataNasc: values.dataNasc,
         });
         setSuccessModal(true);
       } catch (error) {

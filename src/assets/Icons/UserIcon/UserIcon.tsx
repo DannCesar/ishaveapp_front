@@ -8,8 +8,8 @@ export const UserIcon: React.FC<IconProps> = ({onClick,...rest}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="26"
+      width="84"
+      height="84"
       fill="#000000"
       viewBox="0 0 256 256"
       onClick={onClick}

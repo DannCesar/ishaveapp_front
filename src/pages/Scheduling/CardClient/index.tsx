@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
-import { AvatarContainer } from "../../../components/Layout/styles";
+import { UserIcon } from "../../../assets/Icons/UserIcon/UserIcon";
+
 
 interface CardProps {
   cliente: {
@@ -9,16 +10,19 @@ interface CardProps {
     telCliente: number;
     cpfCliente: number;
     emailCliente: string;
-    dataNascCliente: string;
   };
 }
 
 export const CardClient: React.FC<CardProps> = ({ cliente }) => {
   const { nomeCliente, cpfCliente, telCliente, emailCliente } = cliente;
+  
   return (
     <>
       <S.Container>
-        <S.AvatarContainer />
+        <div className="userContainer">
+        <UserIcon onClick={() => {}}/>
+
+        </div>
         <div className="spanContainer">
           <span>
             Nome: <span>{nomeCliente}</span>

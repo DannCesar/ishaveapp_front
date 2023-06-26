@@ -13,24 +13,25 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
   const { data } = useQuery("usuario", async () => {
     return await userApi.getHome();
-  });
-  //   const { data,isLoading } = useQuery(
-  //     "agendamentos",
-  //     async () => {
-  //       console.log("oi")
-  //       return await homeApi.getHome();
+  },{
+    refetchOnWindowFocus: true,
+    staleTime: 60 * 1000, // 1minuto para dar refresh
+  }
+  );
+    const { data: agendamento,isLoading } = useQuery(
+      "agendamentos",
+      async () => {
+        console.log("oi")
+        return await userApi.getHome();
 
-  //     },
-  //     {
-  //       refetchOnWindowFocus: false,
-  //     }
-  //   );
-  //   console.log("agen", data);
-  // console.log(isLoading)
+      },
+      {
+        refetchOnWindowFocus: false,
+      }
+    );
+    console.log("user", agendamento);
   return (
     <>
-      {/* {data?.map((usuario: any) => (
-      ))} */}
         <Layout >
           <S.Container>
             <S.Header>
@@ -44,7 +45,11 @@ export const Home: React.FC = () => {
               <span>Não há agendamentos para o dia.</span>
             </div>
             <S.Content>
-              <ListItemScheduling agendamentos={data} />
+              {
+                agendamento?.agendamentos?.map((agendamentos:any) => agendamentos == ""? "Não há agendamentos para o dia" : (
+                  <ListItemScheduling key={agendamentos.id} agendamentos={agendamentos} />
+                )
+              )}
             </S.Content>
           </S.Container>
         </Layout>

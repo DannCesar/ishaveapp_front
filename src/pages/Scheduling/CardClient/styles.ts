@@ -9,12 +9,16 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 20px;
 
+  & .userContainer{
+    margin-left: 50px;
+  }
+
   & .spanContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
-    margin-top: -20px;
+    margin-left: 30px;
     margin-right: 10px;
+    font-weight: 400;
   }
 `;
 

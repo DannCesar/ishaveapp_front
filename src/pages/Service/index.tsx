@@ -17,7 +17,7 @@ export const Service: React.FC = () => {
   const { data } = useQuery("servico", async () => {
     return await serviceApi.getService();
   });
-  console.log(data);
+  // console.log(data);
 
   // const filterService = data.filter((servico:any) =>{
 
