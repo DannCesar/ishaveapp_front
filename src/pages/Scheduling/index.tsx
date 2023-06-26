@@ -43,6 +43,10 @@ export const Scheduling: React.FC<ClientProps> = () => {
 
   //   }
   //   )
+
+  const handleDeleteClient = () => {
+
+  }
   return (
     <>
       {modalCad && <FormRegisterModal close={() => setModalCad(false)} />}
@@ -85,10 +89,10 @@ export const Scheduling: React.FC<ClientProps> = () => {
           <S.Content>
           <div className="cardContainer">
           {data?.map((cliente: any) =>
-              cliente == "" ? (
+              cliente == null ? (
                 "Não há cliente cadastrado."
               ) : (
-                <CardClient key={cliente.id} cliente={cliente} />
+                <CardClient key={cliente?.id} cliente={cliente} />
               )
             )}
           </div>

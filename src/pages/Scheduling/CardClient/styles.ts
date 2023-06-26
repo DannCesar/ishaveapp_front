@@ -8,9 +8,23 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+  cursor: pointer;
+  :hover{
+    background-color: ${({theme}) => theme.colors.brown};
+  }
+
+  & .trashContainer{
+    display: flex;
+    margin-top: -170px;
+    :hover{
+      fill: red;
+    }
+  
+    
+  }
 
   & .userContainer{
-    margin-left: 50px;
+    margin-left: 30px;
   }
 
   & .spanContainer {

@@ -30,4 +30,9 @@ export class ClientService {
     const {data} = await api.get(`consultar-clientes`)
     return data
   }
+
+  async deleteClient(idC:any){
+    const {data} = await api.delete(`excluir-cliente?idC=${idC}`)
+    return data
+  }
 }

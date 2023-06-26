@@ -33,7 +33,7 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
           </div>
         <div className="formClient">
           <div>
-            <select name="" id="" form={registerClientForm}>
+            <select name=" idServices" id="" form={registerClientForm}>
               <option value="" >Corte</option>
             </select>
           </div>

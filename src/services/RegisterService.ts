@@ -1,5 +1,6 @@
 import { api } from "./api";
 
+// Tipagem das propriedades recebidos do data
 interface RegisterServiceProps{
     nomeServico:string;
 	precoServico:number;
@@ -7,6 +8,7 @@ interface RegisterServiceProps{
 	categoriaServico:string;
 }
 
+// Criação da classe service
 export class RegisterService{
     async registerService({
         nomeServico,

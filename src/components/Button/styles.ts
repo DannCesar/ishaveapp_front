@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+//Tipagem do componente Button
 interface ButtonContainerProps{
     model: "main"|"alternative";
     height?: number;
     width?:number
 }
 
+//Estilização do componente
 export const ButtonContainer = styled.button<ButtonContainerProps>`
 background-color: ${({theme,model}) => model === "main" ? theme.colors.ice: theme.colors.brown };
 color: ${({theme,model}) =>  theme.colors.black};

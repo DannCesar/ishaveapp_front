@@ -42,11 +42,11 @@ export const Home: React.FC = () => {
               </div>
             </S.Header>
             <div className="spanContainer">
-              <span>Não há agendamentos para o dia.</span>
+              {/* <span>Não há agendamentos para o dia.</span> */}
             </div>
             <S.Content>
               {
-                agendamento?.agendamentos?.map((agendamentos:any) => agendamentos == ""? "Não há agendamentos para o dia" : (
+                agendamento?.agendamentos?.map((agendamentos:any) => agendamentos.agendamentos == "" ? "Não há agendamentos cadastrado" : (
                   <ListItemScheduling key={agendamentos.id} agendamentos={agendamentos} />
                 )
               )}
