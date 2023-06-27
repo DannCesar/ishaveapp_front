@@ -9,9 +9,9 @@ interface SchedulingProps {
   agendamentos: {
     nome: string;
     data: string;
+    idA: number;
     horario: string;
     servicos: {
-      idA: number;
       nome: string;
       preco: string;
       descricao: string;
@@ -24,15 +24,17 @@ export const ListItemScheduling: React.FC<SchedulingProps> = ({
 }) => {
   const { nome, data, horario, servicos } = agendamentos;
   const handleDeleteScheduling = async () => {
+   
     try {
-      await schedulingApi.deleteScheduling(servicos.idA);
+      
+      await schedulingApi.deleteScheduling(agendamentos.idA);
       alert("Agendamento deletado com sucesso.")
       location.reload()
     } catch (error) {
       alert("Não foi possível deletar o agendamento");
     }
   };
-  console.log(servicos.idA)
+  console.log(agendamentos)
   return (
     <>
       <S.Container>

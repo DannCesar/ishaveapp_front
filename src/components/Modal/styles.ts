@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Backdrop = styled.div`
   background-color: black;
   position: fixed;
+  left: 0;
+  top: 0;
   height: 100vh;
   width: 100vw;
   z-index: 100;
