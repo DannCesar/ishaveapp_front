@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
                 />
               ))}
             {agendamento?.agendamentos?.length === 0 && (
-              <span>Nenhuma agendamento registrado.</span>
+              <span className="notFounContainer">Nenhuma agendamento registrado.</span>
             )}
           </S.Content>
         </S.Container>
