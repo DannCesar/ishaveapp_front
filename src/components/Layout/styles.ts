@@ -18,6 +18,7 @@ export const NavigationLayout = styled.header`
   margin-top: 20px;
   margin-left: 20px;
   align-items: center;
+  
 
   @media (max-width:1690px){
     max-width: 1140px;

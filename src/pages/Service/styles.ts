@@ -68,5 +68,6 @@ export const Content = styled.div`
   & .notFoundContainer{
     color: #fff;
     margin-top: 130px;
+    margin-left: 20px;
   }
 `;
