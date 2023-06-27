@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { ListItemScheduling } from "./ListItemScheduling";
 import { UserService } from "../../services/UserService";
 import { useQuery } from "react-query";
+import { SearchInput } from "../../components/SearchInput";
 
 const userApi = new UserService();
 
 export const Home: React.FC = () => {
+  const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
   const { data } = useQuery(
     "usuario",
@@ -30,12 +32,20 @@ export const Home: React.FC = () => {
       refetchOnWindowFocus: false,
     }
   );
+  console.log(agendamento);
 
   return (
     <>
       <Layout>
         <S.Container>
           <S.Header>
+            <div className="searchContainer">
+              <span>Pesquisar por nome do cliente :</span>
+              <SearchInput
+                value={searchInput}
+                onChange={(e: any) => setSearchInput(e.target.value)}
+              />
+            </div>
             <div className="btnContainer">
               <Button model="main" onClick={() => navigate("/agendamento")}>
                 Realizar Agendamento
@@ -50,16 +60,20 @@ export const Home: React.FC = () => {
             <span>Preço</span>
           </div>
           <S.Content>
-            {agendamento?.agendamentos?.map((agendamentos: any) =>
-               (
+            {agendamento?.agendamentos
+              ?.filter((agendamentos: any) =>
+                agendamentos.nome
+                  .toLowerCase()
+                  .includes(searchInput.toLowerCase())
+              )
+              .map((agendamentos: any) => (
                 <ListItemScheduling
                   key={agendamentos.id}
                   agendamentos={agendamentos}
                 />
-              )
-            )}
-           {agendamento?.length === 0 && (
-              <span >Nenhuma agendamento registrado.</span>
+              ))}
+            {agendamento?.agendamentos?.length === 0 && (
+              <span>Nenhuma agendamento registrado.</span>
             )}
           </S.Content>
         </S.Container>

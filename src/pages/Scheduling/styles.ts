@@ -84,4 +84,8 @@ export const Content = styled.div`
     padding: 4px 8px;
     display: flex;
   }
+
+  & .notFoundContainer{
+    color: #fff;
+  }
 `;

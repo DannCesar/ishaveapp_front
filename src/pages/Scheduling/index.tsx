@@ -103,7 +103,7 @@ export const Scheduling: React.FC<ClientProps> = () => {
               )}
             </div>
             {data?.length === 0 && (
-              <span >Nenhum cliente registrado.</span>
+              <span className="notFoundContainer">Nenhum cliente registrado.</span>
             )}
           </S.Content>
         </S.Container>

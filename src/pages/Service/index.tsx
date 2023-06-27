@@ -61,7 +61,7 @@ export const Service: React.FC = () => {
                 )
               )}
                {data?.length === 0 &&  (
-              <span >Nenhuma serviço registrado.</span>
+              <span className="notFoundContainer">Nenhum serviço registrado.</span>
             )}
           </S.Content>
         </S.Container>
