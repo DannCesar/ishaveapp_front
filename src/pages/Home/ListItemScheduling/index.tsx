@@ -42,6 +42,7 @@ export const ListItemScheduling: React.FC<SchedulingProps> = ({
           <span>{nome}</span>
           <span>{data}</span>
           <span>{horario}</span>
+          <span>{servicos?.[0]?.nome}</span>
           <span>R$ {servicos?.[0]?.preco}</span>
           <TrashIcon onClick={() => {handleDeleteScheduling()}}/>
         </div>

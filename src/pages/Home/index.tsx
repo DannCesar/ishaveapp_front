@@ -46,6 +46,7 @@ export const Home: React.FC = () => {
             <span>Cliente</span>
             <span>Data</span>
             <span>Horário</span>
+            <span>Serviço</span>
             <span>Preço</span>
           </div>
           <S.Content>

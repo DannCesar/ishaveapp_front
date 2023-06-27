@@ -22,7 +22,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
           <span className="title">{title}</span>
           <span className="label">{label}</span>
           <div className="btnContainer">
-            <Button model="alternative" onClick={() => close()}>Ok</Button>
+            <Button model="alternative" onClick={() => {close(),location.reload()}}>Ok</Button>
           </div>
         </div>
       </S.InfoContainer>

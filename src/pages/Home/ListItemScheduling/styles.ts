@@ -18,7 +18,7 @@ cursor: pointer;
     margin-top: 10px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.2fr;
     align-items: center;
     
 }
