@@ -13,15 +13,11 @@ const serviceApi = new RegisterService();
 
 export const Service: React.FC = () => {
   const [modalCad, setModalCad] = useState(false);
-  const [filter,setFilter] =useState("")
+  const [searchInput, setSearchInput] = useState("");
+
   const { data } = useQuery("servico", async () => {
     return await serviceApi.getService();
   });
-
-  const filterService = (servico:any) => {
-   
-  }
-
 
   return (
     <>
@@ -31,10 +27,13 @@ export const Service: React.FC = () => {
         <S.Container>
           <S.Header>
             <div className="searchContainer">
-              <SearchInput></SearchInput>
-              <span>Pesquisar por nome de Serviço</span>
-
-              <Button model="alternative" >Consultar</Button>
+              
+                <span>Pesquisar por nome do serviço :</span>
+                <SearchInput
+                  value={searchInput}
+                  onChange={(e: any) => setSearchInput(e.target.value)}
+                />
+             
             </div>
             <div className="btnContainer">
               <Button model="main" onClick={() => setModalCad(true)}>
@@ -42,7 +41,7 @@ export const Service: React.FC = () => {
               </Button>
             </div>
           </S.Header>
-         
+
           <div className="serviceContainer">
             <span>Serviço</span>
             <span>Preço</span>
@@ -50,12 +49,19 @@ export const Service: React.FC = () => {
             <span>Descrição</span>
           </div>
           <S.Content>
-            {data?.map((servico: any) =>
-              servico == null ? (
-                "Não há serviço cadastrado."
-              ) : (
-                <ListItemService key={servico.id} servico={servico} />
+            {data
+              ?.filter((servico: any) =>
+                servico.nomeServico
+                  .toLowerCase()
+                  .includes(searchInput.toLowerCase())
               )
+              .map((servico: any) =>
+                (
+                  <ListItemService key={servico.id} servico={servico} />
+                )
+              )}
+               {data?.length === 0 &&  (
+              <span >Nenhuma serviço registrado.</span>
             )}
           </S.Content>
         </S.Container>

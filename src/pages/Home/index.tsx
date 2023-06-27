@@ -21,7 +21,7 @@ export const Home: React.FC = () => {
       staleTime: 60 * 1000, // 1minuto para dar refresh
     }
   );
-  const { data: agendamento, isLoading } = useQuery(
+  const { data: agendamento } = useQuery(
     "agendamentos",
     async () => {
       return await userApi.getHome();
@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
       refetchOnWindowFocus: false,
     }
   );
-  console.log(agendamento)
+
   return (
     <>
       <Layout>
@@ -51,14 +51,15 @@ export const Home: React.FC = () => {
           </div>
           <S.Content>
             {agendamento?.agendamentos?.map((agendamentos: any) =>
-              agendamentos.agendamentos == "" ? (
-                "Não há agendamentos cadastrado"
-              ) : (
+               (
                 <ListItemScheduling
                   key={agendamentos.id}
                   agendamentos={agendamentos}
                 />
               )
+            )}
+           {agendamento?.length === 0 && (
+              <span >Nenhuma agendamento registrado.</span>
             )}
           </S.Content>
         </S.Container>

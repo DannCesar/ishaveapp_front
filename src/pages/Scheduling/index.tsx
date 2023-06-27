@@ -77,13 +77,8 @@ export const Scheduling: React.FC<ClientProps> = () => {
         <S.Container>
           <S.Header>
             <div className="searchContainer">
-              <SearchInput></SearchInput>
-              <span>Pesquisar por :</span>
-              <select>
-                <option value="cpfCliente">CPF</option>
-                <option value="telCliente">Nome</option>
-              </select>
-              <Button model="alternative">Consultar Cliente</Button>
+              <span>Pesquisar por nome do cliente :</span>
+              <SearchInput  value={searchInput} onChange={(e:any) => setSearchInput(e.target.value)}/>
             </div>
             <div className="btnContainer">
               <Button model="main" onClick={() => setModalCad(true)}>
@@ -96,10 +91,8 @@ export const Scheduling: React.FC<ClientProps> = () => {
           </S.Header>
           <S.Content>
             <div className="cardContainer">
-              {data?.filter((cliente) => cliente.nomeCliente.toLowerCase().includes(searchInput.toLowerCase())).map((cliente: any) =>
-                cliente == null ? (
-                  "Não há cliente cadastrado."
-                ) : (
+              {data?.filter((cliente:any) => cliente.nomeCliente.toLowerCase().includes(searchInput.toLowerCase())).map((cliente: any) =>
+               (
                   <CardClient
                     key={cliente?.id}
                     cliente={cliente}
@@ -109,6 +102,9 @@ export const Scheduling: React.FC<ClientProps> = () => {
                 )
               )}
             </div>
+            {data?.length === 0 && (
+              <span >Nenhum cliente registrado.</span>
+            )}
           </S.Content>
         </S.Container>
       </Layout>

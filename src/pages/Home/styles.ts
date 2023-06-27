@@ -88,4 +88,5 @@ export const Content = styled.div`
   margin-top: 10px;
   margin-left: -350px;
   overflow-y: scroll;
+  
 `;
