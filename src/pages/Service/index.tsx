@@ -17,7 +17,6 @@ export const Service: React.FC = () => {
   const { data } = useQuery("servico", async () => {
     return await serviceApi.getService();
   });
-  // console.log(data);
 
   const filterService = (servico:any) => {
    
@@ -52,7 +51,7 @@ export const Service: React.FC = () => {
           </div>
           <S.Content>
             {data?.map((servico: any) =>
-              servico == "" ? (
+              servico == null ? (
                 "Não há serviço cadastrado."
               ) : (
                 <ListItemService key={servico.id} servico={servico} />

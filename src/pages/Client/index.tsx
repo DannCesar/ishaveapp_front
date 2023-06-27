@@ -17,7 +17,6 @@ export const Client: React.FC = () => {
   const {data} = useQuery("usuario", async() =>{
     return  await userApi.getHome()
   })
-console.log("user",data)
 
   return (
     <>

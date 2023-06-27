@@ -7,9 +7,10 @@ import { TrashIcon } from "../../../assets/Icons/TrashIcon/TrashIcon";
 const clientApi = new ClientService();
 
 interface CardProps {
-  onClick(): void;
+  onClick(idCliente:number): void;
+  clientSelected:number;
   cliente: {
-    idCliente: string;
+    idCliente: number;
     nomeCliente: string;
     telCliente: number;
     cpfCliente: number;
@@ -17,7 +18,7 @@ interface CardProps {
   };
 }
 
-export const CardClient: React.FC<CardProps> = ({ cliente }) => {
+export const CardClient: React.FC<CardProps> = ({ clientSelected,onClick,cliente }) => {
   const { nomeCliente, cpfCliente, telCliente, emailCliente } = cliente;
 
   const handleDeleteClient = async () => {
@@ -29,8 +30,7 @@ export const CardClient: React.FC<CardProps> = ({ cliente }) => {
   };
   return (
     <>
-      <S.Container>
-        
+      <S.Container isSelected={clientSelected === cliente.idCliente} onClick={() => onClick(cliente.idCliente) }>
         <div className="userContainer">
           <UserIcon onClick={() => {}} />
         </div>

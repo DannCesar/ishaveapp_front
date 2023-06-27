@@ -25,7 +25,7 @@ export const ListItemScheduling: React.FC<SchedulingProps> = ({
           <span>{nome}</span>
           <span>{data}</span>
           <span>{horario}</span>
-          <span>{servicos.preco}</span>
+          <span>{servicos?.[0]?.preco}</span>
         </div>
       </S.Container>
     </>

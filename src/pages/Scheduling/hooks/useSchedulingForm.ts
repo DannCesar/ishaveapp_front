@@ -4,14 +4,14 @@ import { SchedulingService } from "../../../services/SchedulingService";
 
 const schedulingApi = new SchedulingService()
 
-export const useSchedulingForm = () => {
+export const useSchedulingForm = (clientSelected:number) => {
   const [successModal, setSuccessModal] = useState(false);
   const [errorModal, setErrorModal] = useState(false);
   const schedulingForm = useFormik({
     initialValues: {
         data:"",
-        idCliente: 0,
-        idServices:1,
+        idCliente: clientSelected,
+        idServices:0,
         observacao:""
     },
     onSubmit: async (values) => {

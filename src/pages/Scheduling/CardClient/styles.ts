@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 420px;
   height: 220px;
-  background-color: ${({ theme }) => theme.colors.ice};
+  background-color: ${({ theme,isSelected }) => isSelected? theme.colors.brown : theme.colors.ice};
   border-radius: 18px;
   display: flex;
   align-items: center;

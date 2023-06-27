@@ -21,7 +21,6 @@ export const Home: React.FC = () => {
     const { data: agendamento,isLoading } = useQuery(
       "agendamentos",
       async () => {
-        console.log("oi")
         return await userApi.getHome();
 
       },
@@ -29,7 +28,6 @@ export const Home: React.FC = () => {
         refetchOnWindowFocus: false,
       }
     );
-    console.log("user", agendamento);
   return (
     <>
         <Layout >

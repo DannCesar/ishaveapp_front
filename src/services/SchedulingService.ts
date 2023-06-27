@@ -15,8 +15,8 @@ export class SchedulingService{
         observacao
     }:RegisterSchedulingProps){
         const {data} = await api.post(`agendar`,{
-            dataAgendamento,
-            idCliente,
+            data:dataAgendamento,
+            idCliente: Number(idCliente),
             idServices,
             observacao
         })

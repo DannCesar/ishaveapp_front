@@ -6,44 +6,68 @@ import { Backdrop } from "../../../components/Modal/styles";
 import { SuccessModal } from "../../../components/Modal/SuccessModal";
 import { ErrorModal } from "../../../components/Modal/ErrorModal";
 import DatePicker from "react-datepicker";
+import { useSchedulingForm } from "../hooks/useSchedulingForm";
 
 interface FormSchedulingModalProps {
   close(): void;
+  title: string;
+  label: string;
+  clientSelected: number;
+  servico: {
+    idServico: number;
+    nomeServico: string;
+    precoServico: string;
+    descricaoServico: string;
+    categoriaServico: string;
+    empresaId: number;
+    estado: string;
+  }[];
 }
 
 export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
   close,
+  servico,
+  clientSelected
 }) => {
   const {
-    registerClientForm,
+    schedulingForm,
     setSuccessModal,
     successModal,
     setErrorModal,
     errorModal,
-  } = useRegisterClient();
-  const [selectedDate, setSelectedDate] = useState("");
+  } = useSchedulingForm(clientSelected);
   return (
     <>
       <Backdrop onClick={close} />
 
-      <S.FormContainer onSubmit={registerClientForm.handleSubmit}>
+      <S.FormContainer onSubmit={schedulingForm.handleSubmit}>
         <h4>Agendamento</h4>
-          <div className="spanContainer">
-            <span>Selecione a data,horário e serviço desejado!</span>
-          </div>
+        <div className="spanContainer">
+          <span>Selecione a data,horário e serviço desejado!</span>
+        </div>
         <div className="formClient">
           <div>
-            <select name=" idServices" id="" form={registerClientForm}>
-              <option value="" >Corte</option>
+            <select
+              name=" idServices"
+              id=""
+              onChange={(e) =>
+                schedulingForm.setFieldValue("idServices", [Number(e.target.value)])
+              }
+            >
+              {servico.map((service: any) => (
+                <option value={service.idServico}>{service.nomeServico}</option>
+              ))}
             </select>
           </div>
           <DatePicker
             className="inputDate"
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
+            selected={schedulingForm.values.data}
+            onChange={(date) => schedulingForm.setFieldValue("data",date)}
             showTimeSelect
             dateFormat="dd/MM/yyyy"
             placeholderText="Selecione a data e horario"
+            name="data"
+            
           />
         </div>
         <div className="btnContainer">
@@ -54,7 +78,7 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
             className="btnCad"
             model="alternative"
             type="submit"
-            disabled={!registerClientForm.dirty}
+            disabled={!schedulingForm.dirty}
           >
             Cadastrar
           </Button>
