@@ -53,8 +53,8 @@ export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
           </div>
           {successModal && (
           <SuccessModal
-            title="Os dados do cliente foram salvos!"
-            label="Realize o agendamento para concluir o cadastro."
+            title="Cliente cadastrado com sucesso!"
+            label="Agora poderá selecionar o cliente para um agendamento."
             close={() => setSuccessModal(false)}
           />
         )}

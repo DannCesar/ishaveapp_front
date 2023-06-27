@@ -52,11 +52,6 @@ export const Scheduling: React.FC<ClientProps> = () => {
       refetchOnWindowFocus: false,
     }
   );
-  // const {data: agendamento } = useQuery("agendamento",
-  //   async () => {
-
-  //   }
-  //   )
 
   return (
     <>

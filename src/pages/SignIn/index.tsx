@@ -25,6 +25,7 @@ export const SignIn: React.FC = () => {
               label="Email"
               form={formSignIn}
               placeholder="email@example.com"
+              required
             />
             <TextInput
               type="password"
@@ -32,6 +33,7 @@ export const SignIn: React.FC = () => {
               label="Senha"
               form={formSignIn}
               placeholder="Insira sua senha..."
+              required
             />
             <div className="spanContainer">
               <span>

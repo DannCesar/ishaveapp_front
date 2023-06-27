@@ -27,7 +27,7 @@ interface FormSchedulingModalProps {
 export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
   close,
   servico,
-  clientSelected
+  clientSelected,
 }) => {
   const {
     schedulingForm,
@@ -38,7 +38,7 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
   } = useSchedulingForm(clientSelected);
   return (
     <>
-      <Backdrop onClick={close} />
+    <Backdrop onClick={close} />
 
       <S.FormContainer onSubmit={schedulingForm.handleSubmit}>
         <h4>Agendamento</h4>
@@ -51,7 +51,9 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
               name=" idServices"
               id=""
               onChange={(e) =>
-                schedulingForm.setFieldValue("idServices", [Number(e.target.value)])
+                schedulingForm.setFieldValue("idServices", [
+                  Number(e.target.value),
+                ])
               }
             >
               {servico.map((service: any) => (
@@ -62,12 +64,12 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
           <DatePicker
             className="inputDate"
             selected={schedulingForm.values.data}
-            onChange={(date) => schedulingForm.setFieldValue("data",date)}
+            onChange={(date) => schedulingForm.setFieldValue("data", date)}
             showTimeSelect
             dateFormat="dd/MM/yyyy"
             placeholderText="Selecione a data e horario"
             name="data"
-            
+            required
           />
         </div>
         <div className="btnContainer">
@@ -85,8 +87,8 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
         </div>
         {successModal && (
           <SuccessModal
-            title="Os dados do cliente foram salvos!"
-            label="Realize o agendamento para concluir o cadastro."
+            title="Realizado agendamento com sucesso!"
+            label="Na página de inicio poderá consultar seu agendamento ."
             close={() => setSuccessModal(false)}
           />
         )}

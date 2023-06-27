@@ -32,7 +32,8 @@ const userApi = new UserService();
 // });
 
 export const useSignUp = () => {
-  const [loading, setLoading] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
 
   const formSignUp = useFormik({
     initialValues: {
@@ -64,17 +65,18 @@ export const useSignUp = () => {
           cidade: values.cidade,
           uf: values.uf,
         });
-        alert("Realizado cadastro com sucesso!");
+        setSuccessModal(true);
       } catch (error) {
-        alert(
-          "Erro ao realizar cadastro, tente novamente mais tarde,se persistir entre em contato com o suporte!"
-        );
+        setErrorModal(true);
       }
     },
     // validationSchema: schema,
   });
   return {
     formSignUp,
-    loading,
+    setSuccessModal,
+    successModal,
+    setErrorModal,
+    errorModal,
   };
 };
