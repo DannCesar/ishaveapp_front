@@ -7,6 +7,10 @@ background-color: ${({theme}) => theme.colors.ice};
 border-radius: 12px;
 padding: 12px;
 margin-top: 10px;
+cursor: pointer;
+:hover{
+    background-color: ${({theme}) => theme.colors.brown};
+}
 
 & .list{
     width: 800px;
@@ -14,7 +18,8 @@ margin-top: 10px;
     margin-top: 10px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr;
+    align-items: center;
     
 }
 `

@@ -34,4 +34,9 @@ export class RegisterService{
         const {data} = await api.get(`consultar-servicos?${nomeServico}`)
         return data
     }
+
+    async deleteService(idS:any){
+        const {data} = await api.delete(`excluir-servico?idS=${idS}`)
+        return data
+    }
 }

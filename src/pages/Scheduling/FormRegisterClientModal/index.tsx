@@ -28,20 +28,23 @@ export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
       <S.FormContainer onSubmit={registerClientForm.handleSubmit}>
         <h4>Cadastro do Cliente</h4>
         <div className="formClient">
-          <TextInput label="Nome" name="nome" form={registerClientForm} />
+          <TextInput label="Nome" name="nome" form={registerClientForm} placeholder="Insira o nome do cliente..." />
           <TextInput
             label="Sobrenome"
             name="sobrenome"
             form={registerClientForm}
+            placeholder="Insira o sobrenome do cliente..."
+            
           />
-          <TextInput label="CPF" name="cpf" form={registerClientForm} />
-          <TextInput label="Data de Nascimento" name="dataNasc" form={registerClientForm} />
+          <TextInput label="CPF" name="cpf" form={registerClientForm} placeholder="xxx.xxx.xxx-xx"/>
+          <TextInput label="Data de Nascimento" name="dataNasc" form={registerClientForm} placeholder="xx/xx/xxxx"/>
           <TextInput
             label="Telefone"
             name="telefone"
             form={registerClientForm}
+            placeholder="(xx) xxxxx-xxxx"
           />
-          <TextInput label="Email" name="email" form={registerClientForm} />
+          <TextInput label="Email" name="email" form={registerClientForm} placeholder="example@example.com"/>
         </div>
           <div className="btnContainer">
             <Button  model="alternative" onClick={close} >
@@ -55,7 +58,7 @@ export const FormRegisterModal: React.FC<FormRegisterModalProps> = ({
           <SuccessModal
             title="Cliente cadastrado com sucesso!"
             label="Agora poderá selecionar o cliente para um agendamento."
-            close={() => setSuccessModal(false)}
+            close={() => {setSuccessModal(false),close()}}
           />
         )}
         {errorModal && (

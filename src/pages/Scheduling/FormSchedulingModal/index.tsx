@@ -89,7 +89,7 @@ export const FormSchedulingModal: React.FC<FormSchedulingModalProps> = ({
           <SuccessModal
             title="Realizado agendamento com sucesso!"
             label="Na página de inicio poderá consultar seu agendamento ."
-            close={() => setSuccessModal(false)}
+            close={() =>{setSuccessModal(false),close()} }
           />
         )}
         {errorModal && (

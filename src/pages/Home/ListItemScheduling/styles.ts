@@ -8,14 +8,18 @@ border-radius: 12px;
 padding: 12px;
 margin-top: 10px;
 align-items: center;
-
+cursor: pointer;
+:hover{
+    background-color: ${({theme}) => theme.colors.brown};
+}
 & .list{
     width: 800px;
     height: fit-content;
     margin-top: 10px;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr;
+    align-items: center;
     
 }
 `

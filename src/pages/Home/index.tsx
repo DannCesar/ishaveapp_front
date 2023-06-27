@@ -30,6 +30,7 @@ export const Home: React.FC = () => {
       refetchOnWindowFocus: false,
     }
   );
+  console.log(agendamento)
   return (
     <>
       <Layout>

@@ -24,6 +24,8 @@ export const CardClient: React.FC<CardProps> = ({ clientSelected,onClick,cliente
   const handleDeleteClient = async () => {
     try {
       await clientApi.deleteClient(cliente.idCliente);
+      location.reload()
+      alert("Cliente deletado com sucesso.")
     } catch (error) {
       alert("Não foi possível deletar o cliente");
     }

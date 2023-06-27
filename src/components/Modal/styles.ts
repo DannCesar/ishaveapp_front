@@ -4,7 +4,7 @@ export const Backdrop = styled.div`
   background-color: black;
   position: fixed;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   z-index: 100;
   opacity: 0.5;
 `;

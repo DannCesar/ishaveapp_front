@@ -23,7 +23,7 @@ export class SchedulingService{
         return data
     }
 
-    async deleteScheduling(idA:any){
+    async deleteScheduling(idA:number){
         const {data} = await api.delete(`excluir-agendamento?idA=${idA}`)
         return data
     }

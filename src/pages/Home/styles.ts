@@ -15,7 +15,7 @@ export const Container = styled.div`
     margin-top: 50px;
     display: grid;
     width: 800px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr;
     margin-left: -422px;
     span{
       color: #fff;

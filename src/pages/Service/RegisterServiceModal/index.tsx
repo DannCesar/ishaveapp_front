@@ -33,23 +33,30 @@ export const RegisterServiceModal: React.FC<FormRegisterModalProps> = ({
             name="nomeServico"
             form={registerServiceForm}
             placeholder="Insira o nome do serviço"
+            required
           />
           <TextInput
             label="Preço"
             name="precoServico"
             placeholder="R$ 00,00"
             form={registerServiceForm}
+            type="number"
+            data-mask="00,00"
+             required
           />
           <TextInput
-            placeholder="Adicione a descrição"
+            placeholder="Adicione uma descrição"
             label="Descrição"
             name="descricaoServico"
             form={registerServiceForm}
+            required
           />
           <TextInput
             label="Categoria"
+            placeholder="Insira uma categoria"
             name="categoriaServico"
             form={registerServiceForm}
+            required
           />
         </div>
         <div className="btnContainer">
