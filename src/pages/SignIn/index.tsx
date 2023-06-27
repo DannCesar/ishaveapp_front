@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
-import Logo from "../../assets/logoIShaveApp.png";
+import Logo from "../../assets/artIShave/logoIshave.png";
 import { useSignIn } from "./hooks/useSignIn";
 import { TextInput } from "../../components/TextInput";
 

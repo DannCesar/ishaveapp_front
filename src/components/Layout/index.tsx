@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { UserService } from "../../services/UserService";
 import { useQuery } from "react-query";
 import profile from "../../assets/defaultPerfil.png"
+import ishave from "../../assets/artIShave/letIsahve.png"
 
 
 const userApi = new UserService();

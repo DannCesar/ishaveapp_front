@@ -79,16 +79,17 @@ export const LogoContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-left: 15%;
     width: 600px;
     height: 500px;
   }
 
   & img {
+    
     width: 500px;
-    height: 300px;
-    box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black};
+    height: 500px;
+    /* box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black}; */
     border-radius: 50%;
   }
 `;

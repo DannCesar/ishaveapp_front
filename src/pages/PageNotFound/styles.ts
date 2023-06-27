@@ -38,8 +38,7 @@ width: 50%;
 
   & img {
     width: 500px;
-    height: 300px;
-    box-shadow: 10px 10px 5px ${({ theme }) => theme.colors.black};
+    height: 500px;
     border-radius: 50%;
   }
 

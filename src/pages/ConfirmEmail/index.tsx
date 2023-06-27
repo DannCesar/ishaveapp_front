@@ -44,7 +44,7 @@ export const ConfirmEmail: React.FC = () => {
             <h3>{message}</h3>
           </div>
           <div className="btnContainer">
-            <Button model="alternative" onClick={() => navigate('/login')}>Acessar login</Button>
+            <Button model="alternative" onClick={() => navigate('/')}>Acessar login</Button>
           </div>
         </S.ConfirmEmailModal>
       </S.Container>

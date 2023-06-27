@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import Logo from "../../assets/logoIShaveApp.png";
+import Logo from "../../assets/artIShave/logoIshave.png";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router";
 
